@@ -46,6 +46,19 @@
     fill: #fff;
 }
 
+#sun-rays {
+    animation: spinRays 60s linear infinite;
+    -moz-transform-origin: 47% 47%;
+    transform-origin: 50% 50%;
+
+}
+
+@keyframes spinRays {
+    100% {
+        transform: rotate(360deg);        
+    }
+}
+
 .bio-container {
     color: white;
     margin: 5%;
@@ -54,3 +67,108 @@
 .bio-container h1 {
     font-family: 'Shadows Into Light';
 }
+
+.cloud-container {
+    display: flex;
+}
+
+.cloud {
+    height: 50px;
+}
+
+.cloud:nth-child(1) {
+    transform: scale(.5) translate(-31px, 0px);
+    animation: puffy 6s alternate infinite;
+}
+
+@keyframes puffy {
+    100% {
+        transform: scale(.6) translate(-31px, 0px);
+    }
+}
+
+.cloud:nth-child(2) {
+    transform: scale(.6) translate(84px, 12px);
+    animation: moveCloud 8s alternate infinite;
+}
+
+@keyframes moveCloud {
+    100% {
+        transform: scale(.6) translate(84px, -40px);
+    }
+    
+}
+
+.cloud-puff {
+    background-color: white;
+    box-shadow: inset 10px -10px 0px #a1a1a1;
+    border-radius: 100%;
+    position: relative;
+}
+
+.cloud-puff:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    bottom: 34px;
+    left: 90px;
+}
+.cloud-puff:nth-child(2) {
+    width: 50px;
+    height: 50px;
+    bottom: 80px;
+    left: 28px;
+}
+
+.cloud-puff:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    bottom: 163px;
+    left: 53px;
+}
+.cloud-puff:nth-child(4) {
+    width: 75px;
+    height: 75px;
+    bottom: 240px;
+    left: 126px;
+}
+.cloud-puff:nth-child(5) {
+    width: 60px;
+    height: 60px;
+    bottom: 293px;
+    left: 171px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 758px) {
+
+}
+
