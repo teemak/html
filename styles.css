@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: cursive, 'Shadows Into Light';    
+    font-family: 'Raleway', 'Shadows Into Light';    
 }
 
 .main {
@@ -49,7 +49,6 @@
     animation: spinRays 60s linear infinite;
     -moz-transform-origin: 47% 47%;
     transform-origin: 50% 50%;
-
 }
 
 @keyframes spinRays {
@@ -172,6 +171,7 @@
     left: 171px;
 }
 
+/***** PROJECT SECTION *****/
 
 
 
@@ -197,8 +197,7 @@
 
 
 
-
-
+/***** CONTACT SECTION *****/
 
 @media only screen and (min-width: 768px) {
     .tablet-view {
@@ -211,16 +210,16 @@
         align-self: center;
     }
     .cloud:nth-child(3) {
-    transform: scale(.8) translate(140px, 0px);
-    animation: elevate 16s alternate infinite;
+        transform: scale(.8) translate(140px, 0px);
+        animation: elevate 16s alternate infinite;
     }
     .cloud:nth-child(4) {
-    transform: scale(.6) translate(320px, -40px);
-    animation: elevate2 14s alternate infinite;
+        transform: scale(.6) translate(320px, -40px);
+        animation: elevate2 14s alternate infinite;
     }
     .cloud:nth-child(5) {
-    transform: scale(.5) translate(440px, 0px);
-    animation: elevate3 12s alternate infinite;
+        transform: scale(.5) translate(440px, 0px);
+        animation: elevate3 12s alternate infinite;
     }
     @keyframes elevate {
         0% {
@@ -253,31 +252,30 @@
         font-size: 1.5em;
     }
     .cloud:nth-child(6) {
-    transform: scale(1.5) translate(166px, -60px);
-    animation: desktopCloud 180s alternate infinite;
+        transform: scale(1.5) translate(166px, -60px);
+        animation: desktopCloud 180s alternate infinite;
+    }
+    .cloud:nth-child(7) {
+        transform: scale(0.5) translate(405px, -20px);
+        animation: desktopCloud 180s alternate infinite;
+    }
+    .cloud:nth-child(8) {
+        transform: scale(1.1) translate(300px, -143px);
+        animation: desktopCloud 180s alternate infinite;
+    }
+    .cloud:nth-child(9) {
+        transform: scale(.8) translate(350px, -60px);
+        animation: desktopCloud 180s alternate infinite;
+    }
+    .cloud:nth-child(10) {
+        transform: scale(.5) translate(675px, 0px);
+        animation: desktopCloud 180s alternate infinite;
     }
     @keyframes desktopCloud {
         100% {
             transform: scale(1.5) translate(325px, -60px);
         }
     }
-    .cloud:nth-child(7) {
-    transform: scale(0.5) translate(405px, -20px);
-    animation: desktopCloud 180s alternate infinite;
-    }
-    .cloud:nth-child(8) {
-    transform: scale(1.1) translate(300px, -143px);
-    animation: desktopCloud 180s alternate infinite;
-    }
-    .cloud:nth-child(9) {
-    transform: scale(.8) translate(350px, -60px);
-    animation: desktopCloud 180s alternate infinite;
-    }
-    .cloud:nth-child(10) {
-    transform: scale(.5) translate(675px, 0px);
-    animation: desktopCloud 180s alternate infinite;
-    }
-
 }
 
 @media only screen and (min-width: 1440px) {
