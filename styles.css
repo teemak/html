@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: cursive, 'Shadows Into Light';    
+}
+
+.main {
+   height: 100%;
+   background: #306efe linear-gradient(120deg, #30cde2 0, #306efe 100%) no-repeat;
+}
+
+.cls-1 {
+    fill: #ffac00;
+}
+
+.cls-1, .cls-2 {
+    stroke: #ff8b00;
+}
+
+.cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+    stroke-miterlimit: 10;
+}
+
+.cls-2 {
+    fill: url(#radial-gradient);
+}
+
+.cls-3, .cls-4 {
+    fill: none;
+}
+
+.cls-3 {
+    stroke: #ff3000;
+}
+
+.cls-4, .cls-5 {
+    stroke: #000;
+}
+
+.cls-4 {
+    stroke-linecap: round;
+    stroke-width: 2px;
+}
+
+.cls-5 {
+    fill: #fff;
+}
+
+.bio-container {
+    color: white;
+    margin: 5%;
+}
+
+.bio-container h1 {
+    font-family: 'Shadows Into Light';
+}
