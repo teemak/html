@@ -289,11 +289,17 @@ form p {
     margin: 10px auto;
 }
 
+/***** FOOTER *****/
+footer {
+    display: flex;
+    justify-content: space-around;
+    background: #b1e1fb;
+    padding: 1%;
+}
 
-
-
-
-
+.svg-footer {
+    height: 50px;
+}
 
 
 @media only screen and (min-width: 768px) {
