@@ -293,6 +293,7 @@ form p {
 footer {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background: #b1e1fb;
     padding: 1%;
 }
