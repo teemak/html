@@ -356,6 +356,7 @@ footer {
         padding: 2% 0;
     }
     .project-1, .project-2, .project-3 {
+        border: 5px solid white;
         border-radius: 50px;
         width: 30%;
         display: flex;
