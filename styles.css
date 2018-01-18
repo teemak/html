@@ -1,11 +1,15 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Raleway', 'Shadows Into Light';    
+    font-family: 'Nunito', 'Shadows Into Light';    
 }
 
 .main {
+  //position: absolute;
+  //top: 0;
+  //left: 0;
    background: #306efe linear-gradient(120deg, #30cde2 0, #306efe 100%) no-repeat;
+   z-index: -1;
 }
 
 .cls-1 {
@@ -46,9 +50,9 @@
 }
 
 #sun-rays {
-    animation: spinRays 60s linear infinite;
-    -moz-transform-origin: 47% 47%;
-    transform-origin: 50% 50%;
+    //animation: spinRays 60s linear infinite;
+    //-moz-transform-origin: 47% 47%;
+    //transform-origin: 50% 50%;
 }
 
 @keyframes spinRays {
@@ -179,6 +183,27 @@
     color: white;
     text-align: center;
     background: lightblue;
+    //clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    //clip-path: ellipse(80% 45% at 50% 45%);
+}
+
+.projects::before {
+  content: ""
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+}
+
+.projects-top {
+
+}
+
+.projects-bottom {
+
 }
 
 .projects h2 {
@@ -188,7 +213,8 @@
 
 img {
     padding: 0 5%;
-    max-width: 90%;
+    //max-width: 90%;
+    height: 100px;
 }
 
 .description {
@@ -206,6 +232,8 @@ hr {
 
 .cta p {
     margin: 5%;
+    border-top: 1px solid white;
+    display: inline-block;
 }
 
 .demo {
@@ -225,6 +253,10 @@ hr {
 
 .z {
     border: 7px solid #4a26a6;
+}
+
+.project__card {
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
 }
 
 .project-1 {
