@@ -182,20 +182,21 @@
 .projects {
     color: white;
     text-align: center;
-    background: lightblue;
+    background: linear-gradient(#a8c0ff, #3f2b96);
     //clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     //clip-path: ellipse(80% 45% at 50% 45%);
 }
 
 .projects::before {
   content: ""
+  height: 100px;
+  width: 100%;
   background: red;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-
 }
 
 .projects-top {
