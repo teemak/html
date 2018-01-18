@@ -2,7 +2,10 @@
     padding: 0;
     margin: 0;
     font-family: 'Nunito', 'Shadows Into Light';    
-    overflowX: hidden;
+}
+
+body {
+   overflow-x: hidden;
 }
 
 .main {
@@ -44,6 +47,12 @@
 
 .cls-5 {
     fill: #fff;
+}
+
+#sun-rays {
+  position: absolute;
+  box-shadow: 0 0 500px yellow;
+  z-index: 100;
 }
 
 #sun-rays {
@@ -422,7 +431,7 @@ footer {
     }
     .project-1, .project-2, .project-3 {
         border-radius: 50px;
-        width: 30%;
+        width: 20%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
