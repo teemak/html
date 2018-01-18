@@ -2,14 +2,11 @@
     padding: 0;
     margin: 0;
     font-family: 'Nunito', 'Shadows Into Light';    
+    overflowX: hidden;
 }
 
 .main {
-  //position: absolute;
-  //top: 0;
-  //left: 0;
    background: #306efe linear-gradient(120deg, #30cde2 0, #306efe 100%) no-repeat;
-   z-index: -1;
 }
 
 .cls-1 {
@@ -232,9 +229,12 @@ hr {
 }
 
 .cta p {
-    margin: 5%;
+    //margin: 5%;
+    width: 75%;
+    margin: auto;
+    padding: 5%;
     border-top: 1px solid white;
-    display: inline-block;
+    //display: inline-block;
 }
 
 .demo {
@@ -261,7 +261,8 @@ hr {
 }
 
 .project-1 {
-    background: #306efe;
+//    background: #306efe;
+    background-image: linear-gradient(#23D9ff, #306efe);
 }
 
 .project-1 .demo strong {
@@ -270,7 +271,8 @@ hr {
 }
 
 .project-2 {
-    background: #343ba6;
+    //background: #343ba6;
+    background-image: linear-gradient(135deg, #2f7cb3, #343ba6);
 }
 
 .project-2 .demo strong {
@@ -279,7 +281,8 @@ hr {
 }
 
 .project-3 {
-    background: #2f1869;
+    //background: #2f1869;
+    background-image: linear-gradient(to right, #511780, #2f1869);
 }
 
 .project-3 .demo strong {
@@ -290,7 +293,24 @@ hr {
 /***** CONTACT SECTION *****/
 .contact {
     padding: 5%;
-    background: #151843;
+ /*
+    background-color: #151843;
+    background-image:
+      radial-gradient(white, rbga(255,255,255,.2) 2px, transparent 40px),
+      radial-gradient(white, rbga(255,255,255,.15) 1px, transparent 30px),
+      radial-gradient(white, rbga(255,255,255,.1) 2px, transparent 40px),
+      radial-gradient(rgba(255,255,255,.4),rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px; 250px 250px, 150px 150px;
+    background-position: 0 0, 50px 60px, 130px 270px, 70px 100px; */
+//background-color: #151843;
+background-color: #292724;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 200px 200px; 
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
 
 .contact-container {
