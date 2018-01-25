@@ -1,0 +1,19 @@
+{
+  "name": "nextour",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/styles.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "liveserver": "^0.1.20",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2"
+  }
+}
