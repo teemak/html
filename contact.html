@@ -27,11 +27,11 @@
                 top: 0;
                 left: 0;
                 z-index: 10;
-                background: linear-gradient(0, #663399, #9473b5);
+                background: linear-gradient(0, #663399, #AA77dd);
                 height: 100%;
                 width: 50%;
                 clip-path: polygon(10% 0, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 10% 100%, 0 90%, 0 10%);
-                overflow: auto;
+                overflow: hidden;
                 margin-left: 15px;
             }
             .contact h2 {
@@ -96,7 +96,7 @@
                 //padding: 4%;
                 //clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%, 10% 0);   
                 text-shadow: 1px 1px black;
-                transition: .5s;
+                transition: 1s;
                 cursor: pointer;
             }
             .red-pill {
@@ -114,14 +114,13 @@
             ::-webkit-input-placeholder {
                 color: green;
             }
-            ::-moz-placeholder {
-                //color: green;
+            .red-pill:hover {
+                transform: scale(1.3);
+                //transform: scale(1.3) translate(50%, 0%);
             }
-            .red-pill p, .blue-pill p {
-                margin: 20px;
-            }                
-            .red-pill:hover, .blue-pill:hover {
-                transform: scale(1.1);
+            .blue-pill:hover {
+                transform: scale(1.3);
+                //transform: scale(1.3) translate(-50%, 0%);
             }
         </style>
     </head>
@@ -147,8 +146,8 @@
                     </div>
                 
                     <div class="pills">
-                        <div class="red-pill"><p>SUBMIT</p></div>
-                        <div class="blue-pill"><p>RESET</p></div>
+                        <div class="red-pill"><p></p></div>
+                        <a href="index.html"><div class="blue-pill"><p></p></div></a>
                     </div>
 
 
