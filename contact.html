@@ -1,0 +1,131 @@
+<html>
+    <head>
+    <title>TEE MAK</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: url('wall5.jpg') no-repeat fixed center;
+                background-size: cover;
+                overflow: hidden;
+                font-family: 'Orbitron', 'Roboto', sans-serif;
+                color: white;
+            }
+            .contact-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 20px 100px black;
+            }
+            .contact {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                background: rebeccapurple;
+                height: 100%;
+                width: 50%;
+                border-radius: 1%;
+                clip-path: polygon(10% 0, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 10% 100%, 0 90%, 0 10%);
+            }
+            canvas {
+                background: rgba(0,0,0,1);                
+                border-radius: 1%;
+            }
+            form h2 {
+                text-align: center;
+            }
+            
+            .form-group {
+                margin-left: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            label {
+                background: black;
+                min-width: 200px;
+                clip-path: polygon(0 0, 50% 0, 75% 100%, 0 100%);
+            }
+            label p {
+                margin: 5px;
+            }
+            input#name, input#message {
+                line-height: 40px;
+                width: 88%;
+                font-family: 'Roboto';
+                font-size: 2em;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="contact-container">
+            
+            <div class="contact">                
+                <form class="form">
+                    <h2>CONTACT</h2>
+                    <div class="form-group">
+                        
+                        <label for="name">
+                            <p>NAME</p>
+                        </label>
+                        <input id="name" type="email" placeholder="LAURENCE FISHBURNE" required></input>
+
+                        <label for="message">
+                            <p>MESSAGE</p>
+                        </label>
+                        <input id="message" type="text-area" placeholder="LAURENCE FISHBURNE" required></input>
+
+                    </div>
+                </form>
+            </div>
+            
+            <canvas id="c"></canvas>
+        </div>
+    </body>
+    <script>
+        const c = document.getElementById("c");
+        const ctx = c.getContext("2d");
+        c.height = window.innerHeight/1.5;
+        c.width = window.innerWidth/1.25;
+        const chars = [];
+        
+        for(let j = 0; j < 96; j++) {
+            const kata = String.fromCharCode(0x30A0 + Math.floor(Math.random() * 96));
+            chars.push(kata);
+        }
+
+        const font_size = 20;
+        const columns = c.width / font_size; 
+        const stream = [];
+
+        for(let x = 0; x < columns; x++) {
+            stream[x] = 1; 
+        }    
+
+        function rain() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.07)";
+            ctx.fillRect(0, 0, c.width, c.height);            
+            ctx.fillStyle = "#3F3"; 
+            ctx.font = font_size + "px arial";
+            
+            for(let i = 0; i < stream.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+
+                ctx.fillText(text, i*font_size, stream[i]*font_size);
+
+                if(stream[i] * font_size > c.height && Math.random() > 0.975) 
+                    stream[i] = 0;
+                    stream[i]++;
+            }
+        }
+        setInterval(rain, 100);
+    </script>
+</html>

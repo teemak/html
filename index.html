@@ -26,7 +26,7 @@
             display: grid;
         }
         .left {
-            background: url(wall.jpg);
+            background: url(wall5.jpg);
             clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
             height: 100%;
             width: 100%;
@@ -36,7 +36,7 @@
             transition: 2s;
         }
         .right {
-            background: url(wall.jpg);
+            background: url(wall5.jpg);
             clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
             height: 100%;
             width: 100%;
@@ -84,7 +84,7 @@
             justify-content: space-evenly;
             align-items: center;
             color: white;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.7);
             border-radius: 2%;
             margin: 56px;
             border: 2px solid #7EEEE4;
@@ -425,6 +425,13 @@
         }
         a {
             text-decoration: none;
+            transition: .5s;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        a:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -449,10 +456,13 @@
                 <h1>TEE MAK</h1>
                 <p class="intro">
                     I'm the letter after 'S' and before 'U'. Don't call me Mak Daddy, that's my dad's name.
-                    My website was made with the React framework. The site is 100% mobile responsive.
                 </p>
                 <p class="intro">
-                    Click on that contact sphere and leave a message. Let me know if you found the easter egg.                    
+                    My website was made with React and Redux. It is best experienced with a desktop display
+                    but can also be viewed on mobile devices.
+                </p>
+                <p class="intro">
+                    Click on that contact sphere and leave a message. Let me know how many easter eggs you find.                    
                 </p>
             </div>
             <div class="meta">
@@ -473,7 +483,7 @@
 
                 <a href="index2.html"><div class="sphere"><p>PORTFOLIO</p></div></a>
                 <div class="sphere"><p>SOCIAL</p></div>
-                <div class="sphere"><p>CONTACT</p></div>
+                <a href="contact.html"><div class="sphere"><p>CONTACT</p></div></a>
             </div>
             
             <div class="energy">
