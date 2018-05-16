@@ -54,6 +54,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: baseline;
+                padding: 5px;
             }
             label {
                 background: black;
@@ -88,23 +89,40 @@
                 font-size: 1.5em;
             }
             .red-pill, .blue-pill {
-                padding: 4%;
-                clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%, 10% 0);   
+                text-align: center;
+                height: 75px;
+                width: 200px;
+                border-radius: 50px;
+                //padding: 4%;
+                //clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%, 10% 0);   
                 text-shadow: 1px 1px black;
+                transition: .5s;
+                cursor: pointer;
             }
             .red-pill {
                 color: black;
                 background: linear-gradient(#730516, #fb0000, #730516);
-                border-top: 1px solid black;    
-                border-bottom: 1px solid black;    
+                border-top: 3px outset black;    
+                border-bottom: 3px outset black;    
             }
             .blue-pill {
                 color: white;
                 background: linear-gradient(#000b73, #0018ff, #000b73);
-                border-top: 1px solid black;    
-                border-bottom: 1px solid black;    
+                border-top: 3px outset black;    
+                border-bottom: 3px outset black;    
             }
-            
+            ::-webkit-input-placeholder {
+                color: green;
+            }
+            ::-moz-placeholder {
+                //color: green;
+            }
+            .red-pill p, .blue-pill p {
+                margin: 20px;
+            }                
+            .red-pill:hover, .blue-pill:hover {
+                transform: scale(1.1);
+            }
         </style>
     </head>
     <body>
@@ -129,9 +147,10 @@
                     </div>
                 
                     <div class="pills">
-                        <div class="red-pill">SUBMIT</div>
-                        <div class="blue-pill">RESET</div>
+                        <div class="red-pill"><p>SUBMIT</p></div>
+                        <div class="blue-pill"><p>RESET</p></div>
                     </div>
+
 
                 </form>
             </div>
@@ -185,7 +204,7 @@
             setInterval(rain, 100);
         }
 
-        input1.addEventListener('click', function() {
+        input1.addEventListener('focus', function() {
             if(!once) {
                 once = true;
                 matrixRain();
@@ -193,7 +212,7 @@
             return;
         });
 
-        input2.addEventListener('click', function() {
+        input2.addEventListener('focus', function() {
             if(!once) {
                 once = true;
                 matrixRain();
