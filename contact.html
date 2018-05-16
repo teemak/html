@@ -22,6 +22,7 @@
                 box-shadow: 0 20px 100px black;
             }
             .contact {
+                display: inline-block;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -30,6 +31,7 @@
                 height: 100%;
                 width: 50%;
                 clip-path: polygon(10% 0, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 10% 100%, 0 90%, 0 10%);
+                overflow: auto;
             }
             .contact h2 {
                 margin: 2%;
@@ -70,8 +72,6 @@
                 outline: none;
             }
             input[type=text]:focus {
-                box-sizing: border-box;
-                border: none;
             }
             textarea {
                 resize: none;    
@@ -101,6 +101,7 @@
                             placeholder="You take the blue pill the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill you stay in Wonderland, and I show you how deep the rabbit hole goes." required></textarea>
 
                     </div>
+                    <
                 </form>
             </div>
             
@@ -128,12 +129,13 @@
         }    
 
         function rain() {
+            ctx.fillRect(0,0,75,c.height);
             ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
             ctx.fillRect(0, 0, c.width, c.height);            
             ctx.fillStyle = "#3F3"; 
             ctx.font = font_size + "px arial";
             
-            for(let i = 0; i < stream.length; i++) {
+            for(let i = 35; i < stream.length; i++) {
                 const text = chars[Math.floor(Math.random() * chars.length)];
 
                 ctx.fillText(text, i*font_size, stream[i]*font_size);
