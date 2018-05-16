@@ -32,6 +32,7 @@
                 width: 50%;
                 clip-path: polygon(10% 0, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 10% 100%, 0 90%, 0 10%);
                 overflow: auto;
+                margin-left: 15px;
             }
             .contact h2 {
                 margin: 0 auto;
@@ -87,8 +88,9 @@
                 font-size: 1.5em;
             }
             .red-pill, .blue-pill {
-                padding: 2%;
+                padding: 4%;
                 clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%, 10% 0);   
+                text-shadow: 1px 1px black;
             }
             .red-pill {
                 color: black;
@@ -101,7 +103,6 @@
                 background: linear-gradient(#000b73, #0018ff, #000b73);
                 border-top: 1px solid black;    
                 border-bottom: 1px solid black;    
-                text-shadow: 1px 1px black;
             }
             
         </style>
@@ -130,8 +131,6 @@
                     <div class="pills">
                         <div class="red-pill">SUBMIT</div>
                         <div class="blue-pill">RESET</div>
-                        
-                    
                     </div>
 
                 </form>
@@ -141,6 +140,7 @@
         </div>
     </body>
     <script>
+
         const c = document.getElementById("c");
         const ctx = c.getContext("2d");
         c.height = window.innerHeight/1.5;
@@ -161,13 +161,13 @@
         }    
 
         function rain() {
-            ctx.fillRect(0,0,75,c.height);
+            ctx.fillRect(0,0,90,c.height);
             ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
             ctx.fillRect(0, 0, c.width, c.height);            
             ctx.fillStyle = "#3F3"; 
             ctx.font = font_size + "px arial";
             
-            for(let i = 35; i < stream.length; i++) {
+            for(let i = 25; i < stream.length; i++) {
                 const text = chars[Math.floor(Math.random() * chars.length)];
 
                 ctx.fillText(text, i*font_size, stream[i]*font_size);
@@ -177,6 +177,29 @@
                     stream[i]++;
             }
         }
-        setInterval(rain, 100);
+        const input1 = document.getElementById('name');
+        const input2 = document.getElementById('message');
+        let once = false;
+
+        function matrixRain() {
+            setInterval(rain, 100);
+        }
+
+        input1.addEventListener('click', function() {
+            if(!once) {
+                once = true;
+                matrixRain();
+            }
+            return;
+        });
+
+        input2.addEventListener('click', function() {
+            if(!once) {
+                once = true;
+                matrixRain();
+            }
+            return;
+        });
+
     </script>
 </html>
