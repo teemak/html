@@ -29,15 +29,17 @@
                 background: rebeccapurple;
                 height: 100%;
                 width: 50%;
-                border-radius: 1%;
                 clip-path: polygon(10% 0, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 10% 100%, 0 90%, 0 10%);
+            }
+            .contact h2 {
+                margin: 2%;
             }
             canvas {
                 background: rgba(0,0,0,1);                
-                border-radius: 1%;
             }
             form h2 {
                 text-align: center;
+                color: rgba(0,220,0);
             }
             
             .form-group {
@@ -45,21 +47,35 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                align-items: flex-start;
+                align-items: baseline;
             }
             label {
                 background: black;
                 min-width: 200px;
                 clip-path: polygon(0 0, 50% 0, 75% 100%, 0 100%);
+                color: rgba(0,220,0);
+                margin-top: 5%;
             }
             label p {
-                margin: 5px;
+                height: 5%;
             }
-            input#name, input#message {
+            input#name, textarea {
                 line-height: 40px;
                 width: 88%;
                 font-family: 'Roboto';
-                font-size: 2em;
+                font-size: 1.5em;
+                background: black;
+                border: none;
+                color: rgba(0,255,0);
+                outline: none;
+            }
+            input[type=text]:focus {
+                box-sizing: border-box;
+                border: none;
+            }
+            textarea {
+                resize: none;    
+                overflow: hidden;
             }
 
             
@@ -76,12 +92,13 @@
                         <label for="name">
                             <p>NAME</p>
                         </label>
-                        <input id="name" type="email" placeholder="LAURENCE FISHBURNE" required></input>
+                        <input id="name" type="email" placeholder="Morpheus" required></input>
 
                         <label for="message">
                             <p>MESSAGE</p>
                         </label>
-                        <input id="message" type="text-area" placeholder="LAURENCE FISHBURNE" required></input>
+                        <textarea id="message" type="text-area"  rows="4" 
+                            placeholder="You take the blue pill the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill you stay in Wonderland, and I show you how deep the rabbit hole goes." required></textarea>
 
                     </div>
                 </form>
@@ -111,7 +128,7 @@
         }    
 
         function rain() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.07)";
+            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
             ctx.fillRect(0, 0, c.width, c.height);            
             ctx.fillStyle = "#3F3"; 
             ctx.font = font_size + "px arial";
