@@ -84,6 +84,10 @@
             justify-content: space-evenly;
             align-items: center;
             color: white;
+            background: rgba(0,0,0,0.5);
+            border-radius: 2%;
+            margin: 56px;
+            border: 2px solid #7EEEE4;
         }
         .bio h1 {
             text-align: center;
@@ -165,9 +169,11 @@
         }
         .nav .sphere:nth-child(2) {            
             animation: heartbeat 1s ease-in-out alternate infinite, glow 1.5s ease-in-out alternate infinite;        
+            cursor: not-allowed;
         }
         .nav .sphere:nth-child(3) {
             animation: heartbeat 1.2s ease-in-out alternate infinite, glow 1.5s ease-in-out alternate infinite;
+            cursor: not-allowed;
         }
         @keyframes heartbeat {
             0% { 
@@ -415,6 +421,9 @@
         }
         .remove {
             display: none;
+        }
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
