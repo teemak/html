@@ -294,7 +294,6 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            //background: red;
             background: radial-gradient(circle, red, red, #59000d);
             width: 150px;
             height: 150px;
@@ -312,8 +311,6 @@
             height: 150px;
             border-radius: 50%;
             z-index: 21;
-            text-align: center;
-            //background: rgba(0,255,0,0.7);
         }
         .lock:after {
             content: 'ENTER';
@@ -331,44 +328,61 @@
             left: 11px;
             z-index: 25;
             color: black;
-            text-shadow: 2px 2px white;
-            //background: rgba(0,255,0,0.5);
+            text-shadow: 1px 1px white;
         }
-            
         @keyframes rotate {
             0%{transform: rotate(0deg);}
             100%{transform: rotate(360deg);}
         }
         .ring1 {
             position: absolute;
-            top: -16%;
-            left: -16%;
+            top: -25px;
+            left: -25px;
             width: 200px;
             height: 200px;
             border-radius: 50%;
             z-index: 23;
             border: 15px dashed rgba(225,0,0);
-            //border-top: 15px dashed rgba(230,0,0);
-            //border-bottom: 15px dashed red;
             animation: rotate 7s infinite linear;
         }
         .ring2 {
             position: absolute;
-            top: -32%;
-            left: -32%;
+            top: -50px;
+            left: -50px;
             width: 250px;
             height: 250px;
             border-radius: 50%;
             z-index: 22;
             border: 15px dashed rgba(200,0,0);
-            //border-top: 15px dashed red;
-            //border-bottom: 15px dashed red;
             animation: rotate 9s infinite linear;
+        }
+        .ring3 {
+            position: absolute;
+            top: -75px;
+            left: -75px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: 21;
+            border: 15px dashed rgba(175,0,0);
+            animation: rotate 15s infinite linear;
+        }
+        .green1 {
+            transition: 1.5s;
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            z-index: 23;
+            border: 15px solid green;
+            background: radial-gradient(circle, rgba(0,155,0,0.8), rgba(0,155,0,0.8), black);
         }
         .green2 {
             position: absolute;
-            top: -32%;
-            left: -32%;
+            top: -50px;
+            left: -50px;
             width: 250px;
             height: 250px;
             border-radius: 50%;
@@ -377,24 +391,10 @@
             transition: 1.5s;
             background: rgba(0,255,0,0.7);
         }
-        .ring3 {
-            position: absolute;
-            top: -48%;
-            left: -48%;
-            border: 15px solid black;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            z-index: 21;
-            border: 15px dashed rgba(175,0,0);
-            //border-top: 15px dashed red;
-            //border-bottom: 15px dashed red;
-            animation: rotate 15s infinite linear;
-        }
         .green3 {
             position: absolute;
-            top: -48%;
-            left: -48%;
+            top: -75px;
+            left: -75px;
             border: 15px solid black;
             width: 300px;
             height: 300px;
@@ -403,19 +403,6 @@
             border: 15px solid green;
             transition: 2s;
             background: rgba(0,255,0,1);
-        }
-        .green1 {
-            transition: 1.5s;
-            position: absolute;
-            top: -16%;
-            left: -16%;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            z-index: 23;
-            border: 15px solid green;
-            background: radial-gradient(circle, rgba(0,155,0,0.8), rgba(0,155,0,0.8), black);
-            //background: rgba(0,255,0,0.8);
         }
         .hidden {
             opacity: .0;
