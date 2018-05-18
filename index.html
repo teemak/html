@@ -136,7 +136,6 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: inset -25px 0px 0 0px #9098a1;
             box-shadow: inset -7px 37px 50px -14px black    
         }
         .sphere p {
@@ -145,6 +144,7 @@
             font-size: smaller;
             color: #7EEEE4;
             text-shadow: 2px 2px gray;
+            transform: skew(5px);
         }
         .nav {
             grid-column: 1 / 6;
@@ -168,7 +168,6 @@
         }
         .nav .sphere:nth-child(2) {            
             animation: heartbeat 1s ease-in-out alternate infinite, glow 1.5s ease-in-out alternate infinite;        
-            cursor: not-allowed;
         }
         .nav .sphere:nth-child(3) {
             animation: heartbeat 1.2s ease-in-out alternate infinite, glow 1.5s ease-in-out alternate infinite;
@@ -297,6 +296,10 @@
             z-index: 20;
             border-radius: 50%;
             text-align: center;
+            transition: 1.5s;
+        }
+        .lock:hover {
+            transform: translate(-50%, -50%) scale(1.2);
         }
         .unlock {
             cursor: none;
@@ -308,6 +311,7 @@
             height: 150px;
             border-radius: 50%;
             z-index: 21;
+            transition: .5s;
         }
         .lock:after {
             content: 'ENTER';
@@ -467,7 +471,7 @@
                 </div> -->
 
                 <a href="index2.html"><div class="sphere"><p>PORTFOLIO</p></div></a>
-                <div class="sphere"><p>SOCIAL</p></div>
+                <a href="social.html"><div class="sphere"><p>SOCIAL</p></div></a>
                 <a href="contact.html"><div class="sphere"><p>CONTACT</p></div></a>
             </div>
             
