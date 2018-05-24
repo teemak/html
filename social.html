@@ -2,20 +2,131 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            color: #7EEEE4;
+            font-size: 2em;
+        }
+        .stones {
+            width: 100vw;
+            height: 100vh;
+            background: silver;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+        .cell {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #7EEEE4;
+            border-radius: 5px;
+        }
+        .youtube {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            color: yellow;
+        }
+        .codepen {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            color: rebeccapurple;
+        }
+        .github {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+        .linkedin {
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+        }
+        .twitter {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+        }
+        .skype {
+            grid-column: 3 / 4;
+            grid-row: 4 / 5;
+        }
+        .stone {
+            position: relative;
+            width: 100px;
+            height: 150px;
+            border-radius: 55% / 55%;
+            transition: .5s;
+            overflow: hidden;
+        }
+        .mind {
+            border: 1px solid #aaaa00;
+            box-shadow: 0px 0px 50px 5px yellow;
+        }
+        .power {
+            border: 1px solid #aa00aa;
+            box-shadow: 0px 0px 50px 5px purple;
+        }
+        img {
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            top: -230%;
+            left: -400%;
+            transition: .5s;
+            transform: scale(.9);
+        }
+        img:hover {
+            transform: scale(1.5);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="stones">
-        <ul>
-            <li>BLUE</li>
-            <li>Green</li>
-            <li>purple</li>
-            <li>red</li>
-            <li>orange</li>
-            <li>yellow</li>
-        </ul>
+    <div class="stones grid-container">
+        <div class="youtube cell">
+            <div class="stone mind">
+                <img src="mind.png"></img>
+            </div>
+            <div class="link">YouTube</div>
+            <div class="icon"></div>
+        </div>
+        <div class="codepen cell">
+            <div class="stone power">
+                <img src="power.png"></img>
+            </div>
+            <div class="link">Codepen</div>
+        </div>
+        <div class="github cell">
+            <div class="stone">
+                <img src="mind.png"></img>
+            </div>
+            <div class="link">Github</div>
+        </div>
+        <div class="linkedin cell">
+            <div class="stone">
+                <img src="mind.png"></img>
+            </div>
+            <div class="link">Linkedin</div>
+        </div>
+        <div class="twitter cell">
+            <div class="stone">
+                <img src="mind.png"></img>
+            </div>
+            <div class="link">Twitter</div>
+        </div>
+        <div class="skype cell">
+            <div class="stone">
+                <img src="mind.png"></img>
+            </div>
+            <div class="link">Skype</div>
+        </div>
     </div>
 
 </body>
