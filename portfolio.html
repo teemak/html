@@ -6,9 +6,12 @@
     <link href="styles.css" rel="stylesheet">
     <style>
         :root {
-            --cell: #B3B6AF;
+            --cell: #222222;
             --line: #494E4A;
-            --border: 10px dashed black;
+            --border: 6px solid orange;
+            --arrows: #39ff14;
+            --bars: repeating-linear-gradient(60deg, red, black 20px);
+
         }
         .background {
         background:
@@ -27,33 +30,63 @@
             align-items: center;
         }
         .side-panel {
-            background: linear-gradient(to right, blue, #7EEEE4);
-            height: 98vh;
-            width: 350px;
+            background-image: linear-gradient(to right bottom, #FF88FF, rebeccapurple, rebeccapurple);
+            //background: linear-gradient(to right, blue, #7EEEE4);
+            height: 100vh;
+            width: 13vw;
             text-align: center;
-            border-top: var(--border);
-            border-bottom: var(--border);
+            //border-top: var(--border);
+            //border-bottom: var(--border);
             border-right: var(--border);
+            outline: solid 3px black;
         }
         .triangle {
             background: none;
         }
         .card {
-            background: silver;
+            background: rgba(0,0,0,1);
+            border: 6px solid orange;
+            border-radius: 5px;
+            //border-image-source: repeating-linear-gradient(45deg, black, red 20px);
+            //border-image-slice: 1;
+            height: 75vh;
+            width: 30vw;
+            margin-left: 3%;
         }
-</style>
+        
+        #base {
+            height: 75px;
+            position: relative;
+            background: var(--arrows);
+            margin: 0 3%;
+        }
+        
+        #base:before {
+            content: "";
+            position: absolute;
+            right: -40px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 40px solid var(--arrows);
+            border-top: 38px solid transparent;
+            border-bottom: 38px solid transparent;
+        }
+
+          
+    </style>
 </head>
 
 <body>
     <div class="background">
         <div class="container">
-            <div class="side-panel">SIDE PANEL</div>
-            <div class="triangle">
-                <svg height="200" width="500">
-                    <polygon points="200, 0 100, 200 200, 200" style="fill:white,stroke:white,stroke-width:1" />
-                </svg>
-            </div>
-            <div class="card">HEX CARD</div>
+            <div class="side-panel"></div>
+            <div id="base"></div>
+            <div id="base"></div>
+            <div id="base"></div>
+            <div id="base"></div>
+            <div id="base"></div>
+            <div class="card"></div>
         </div>
     </div>
 </body>
