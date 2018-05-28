@@ -2,132 +2,170 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Orbitron', sans-serif;
-            color: #7EEEE4;
-            font-size: 2em;
         }
-        .stones {
-            width: 100vw;
+        .social-container {
+            background: url("skills.jpg") no-repeat center center;
+            background-size: cover;
             height: 100vh;
-            background: silver;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-rows: repeat(5, 1fr);
-            grid-template-columns: repeat(4, 1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-        }
-        .cell {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid #7EEEE4;
-            border-radius: 5px;
         }
-        .youtube {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-            color: yellow;
-        }
-        .codepen {
-            grid-column: 3 / 4;
-            grid-row: 2 / 3;
-            color: rebeccapurple;
-        }
-        .github {
-            grid-column: 2 / 3;
-            grid-row: 3 / 4;
-        }
-        .linkedin {
-            grid-column: 3 / 4;
-            grid-row: 3 / 4;
-        }
-        .twitter {
-            grid-column: 2 / 3;
-            grid-row: 4 / 5;
-        }
-        .skype {
-            grid-column: 3 / 4;
-            grid-row: 4 / 5;
-        }
-        .stone {
-            position: relative;
-            width: 100px;
-            height: 150px;
-            border-radius: 55% / 55%;
-            transition: .5s;
+        .hex-container {
+            min-height: 675px;
+            min-width: 1500px;
             overflow: hidden;
         }
-        .mind {
-            border: 1px solid #aaaa00;
-            box-shadow: 0px 0px 50px 5px yellow;
-        }
-        .power {
-            border: 1px solid #aa00aa;
-            box-shadow: 0px 0px 50px 5px purple;
-        }
-        img {
-            background: rgba(0,0,0,0.5);
-            position: absolute;
-            top: -230%;
-            left: -400%;
+        .hexagon {
+            width: 500px;
+            height: 250px;
+            transform: rotate(90deg);
+            overflow: hidden;
             transition: .5s;
-            transform: scale(.9);
         }
-        img:hover {
-            transform: scale(1.5);
+        .hex-inside {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-60deg);
+            overflow: hidden;       
+        }
+        .hex-image {
+            width: 100%;
+            height: 100%;
+            background: white;
+            transform: rotate(-60deg);
+            background: rgba(0,0,0,0.7);
+        }
+        .top-row {
+            transform: translateY(10px);
+        }
+        .second-row {
+            transform: translateY(10px);
+            display: flex;
+            justify-content: center;
+        }
+        .third-row {
+            transform: translateY(-15px);
+            height: 33.33vh;
+            display: flex;
+            justify-content: center;
+        }
+        .first {            
+            position: relative;
+            margin: auto;
+            top: 25px;
+        }
+        .second {
+            position: relative;
+            left: 121px;
+        }
+        .third {
+            position: relative;
+            left: -120px;
+        } 
+        .fourth {
+            position: relative;
+            left: 241px;
+        }
+        .fifth {
+        }
+        .sixth {
+            position: relative;
+            left: -241px;
+        } 
+        .link {
+            position: absolute;
+            top: -35px;
+            left: 180px;
+            font-size: 2em;
+            color: black;
+            transform: translateY(80px) rotate(30deg);
+            transition: .5s;
+            cursor: pointer;
+        }
+        .link:hover {
+            transform: translateY(80px) rotate(30deg) scale(1.2);
         }
     </style>
 </head>
 
 <body>
-    <div class="stones grid-container">
-        <div class="youtube cell">
-            <div class="stone mind">
-                <img src="mind.png"></img>
+    <div class="social-container">
+        <div class="hex-container">
+            
+            <div class="top-row">
+                <div class="hexagon first">
+                    <div class="hex-inside">
+                        <div class="hex-image">
+                            <div class="link">
+                                <object type="image/svg+xml" data="youtube.svg"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
-            <div class="link">YouTube</div>
-            <div class="icon"></div>
-        </div>
-        <div class="codepen cell">
-            <div class="stone power">
-                <img src="power.png"></img>
+
+            <div class="second-row">
+                
+                <div class="hexagon second">
+                    <div class="hex-inside">
+                        <div class="hex-image">
+                            <div class="link">
+                                <object type="image/svg+xml" data="git.svg"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hexagon third">
+                    <div class="hex-inside">
+                        <div class="hex-image">
+                            <div class="link">
+                                <object type="image/svg+xml" data="linkedin.svg"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="link">Codepen</div>
-        </div>
-        <div class="github cell">
-            <div class="stone">
-                <img src="mind.png"></img>
+
+            <div class="third-row">
+                <div class="hexagon fourth">
+                    <div class="hex-inside">
+                        <div class="hex-image">
+                            <div class="link">
+                                <object type="image/svg+xml" data="discord.svg"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="hexagon fifth">
+                    <div class="hex-inside">
+                        <div class="hex-image">
+                            <div class="link">
+                                <object type="image/svg+xml" data="twitter.svg"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="hexagon sixth">
+                    <div class="hex-inside">
+                        <div class="hex-image">
+                            <div class="link">
+                                <object type="image/svg+xml" data="whatsapp.svg"></object>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
-            <div class="link">Github</div>
-        </div>
-        <div class="linkedin cell">
-            <div class="stone">
-                <img src="mind.png"></img>
-            </div>
-            <div class="link">Linkedin</div>
-        </div>
-        <div class="twitter cell">
-            <div class="stone">
-                <img src="mind.png"></img>
-            </div>
-            <div class="link">Twitter</div>
-        </div>
-        <div class="skype cell">
-            <div class="stone">
-                <img src="mind.png"></img>
-            </div>
-            <div class="link">Skype</div>
+
         </div>
     </div>
-
 </body>
 
