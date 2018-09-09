@@ -3,91 +3,68 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles.css" rel="stylesheet">
-    <style>
-        :root {
-            --cell: #222222;
-            --line: #494E4A;
-            --border: 6px solid orange;
-            --arrows: #39ff14;
-            --bars: repeating-linear-gradient(60deg, red, black 20px);
-            cursor: url(cursor.png), auto;
-        }
-        .background {
-        background:
-        radial-gradient(circle farthest-side at 0% 50%,var(--cell) 23.5%,rgba(240,166,17,0) 0)21px 30px,
-        radial-gradient(circle farthest-side at 0% 50%,var(--line) 24%,rgba(240,166,17,0) 0)19px 30px,
-        linear-gradient(var(--cell) 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,var(--cell) 0)0 0,
-        linear-gradient(150deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
-        linear-gradient(30deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
-        linear-gradient(90deg,var(--line) 2%,var(--cell) 0,var(--cell) 98%,var(--line) 0%)0 0 var(--cell);
-        background-size:40px 60px;
-        height: 100vh;
-        width: 100vw;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-        }
-        .side-panel {
-            background-image: linear-gradient(to right bottom, #FF88FF, rebeccapurple, rebeccapurple);
-            //background: linear-gradient(to right, blue, #7EEEE4);
-            height: 100vh;
-            width: 13vw;
-            text-align: center;
-            //border-top: var(--border);
-            //border-bottom: var(--border);
-            border-right: var(--border);
-            outline: solid 3px black;
-        }
-        .triangle {
-            background: none;
-        }
-        .card {
-            background: rgba(0,0,0,1);
-            border: 6px solid orange;
-            border-radius: 5px;
-            //border-image-source: repeating-linear-gradient(45deg, black, red 20px);
-            //border-image-slice: 1;
-            height: 75vh;
-            width: 30vw;
-            margin-left: 3%;
-        }
-        
-        #base {
-            height: 75px;
-            position: relative;
-            background: var(--arrows);
-            margin: 0 3%;
-        }
-        
-        #base:before {
-            content: "";
-            position: absolute;
-            right: -40px;
-            bottom: 0;
-            width: 0;
-            height: 0;
-            border-left: 40px solid var(--arrows);
-            border-top: 38px solid transparent;
-            border-bottom: 38px solid transparent;
-        }
-
-          
-    </style>
+    <link href="portfolio.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="background">
-        <div class="container">
-            <div class="side-panel"></div>
-            <div id="base"></div>
-            <div id="base"></div>
-            <div id="base"></div>
-            <div id="base"></div>
-            <div id="base"></div>
-            <div class="card"></div>
+    <div class="background"></div>
+    <div class="banner">
+        <div class="banner-item frontend">
+                <p class="marquee">
+                  <span>FRONTEND FRONTEND FRONTEND FRONTEND FRONTEND &nbsp;</span>
+                </p>
+                <p class="marquee marquee2">
+                  <span>FRONTEND FRONTEND FRONTEND FRONTEND FRONTEND &nbsp;</span>
+                </p>
+            <div class="card-container">
+
+                <div class="card">
+                    <div class="card-front active frame">
+                        <img src="images/natours.png" alt="nextour screenshot" />
+                        <button class="btn info">&raquo</button>
+                    </div>
+                    <div class="card-back frame">
+                        <p class="description">This website was made using Block Element Modifiers(BEM) methodology and SASS preprocessor.</p>
+                        <div class="button-container">
+                            <button class="back-button">DEMO</button>
+                            <button class="back-button">CODE</button>
+                        </div>
+                        <button class="btn info">&laquo</button>
+                    </div>
+                </div>
+
+                <div class="card">Card Two</div>
+                <div class="card">Card Three</div>
+            </div>
+        </div>
+        <div class="banner-item backend">
+            <div class="card-container">
+                <div class="card">Card One</div>
+                <div class="card">Card Two</div>
+                <div class="card">Card Three</div>
+            </div>
+        </div>
+        <div class="banner-item fullstack">
+            <div class="card-container">
+                <div class="card">Card One</div>
+                <div class="card">Card Two</div>
+                <div class="card">Card Three</div>
+            </div>
         </div>
     </div>
+    <script>
+        let front = document.getElementsByClassName("card-front")[0];
+        let back = document.getElementsByClassName("card-back")[0];
+
+        front.addEventListener("click", () => {
+            back.classList.add("active");
+            front.classList.remove("active");
+        });
+        
+        back.addEventListener("click", () => {
+            front.classList.add("active");
+            back.classList.remove("active");
+        });
+    </script>
 </body>
 

@@ -3,427 +3,9 @@
     <title>TEE MAK</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39|Orbitron|Roboto" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            overflow: hidden;
-            font-family: "Orbitron", sans-serif;
-            font-size: 2em;
-            color: #7EEEE4;
-            cursor: url(cursor.png), auto;
-        }
-        .intro {
-            font-family: 'Roboto', sans-serif;
-            font-size: smaller;
-        }
-        .main-container {
-            width: 100%;
-            height: 100vh;
-            background: gray;
-            display: grid;
-        }
-        .left {
-            background: url(wall.jpg);
-            clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            z-index: 20;
-            transition: 2s;
-        }
-        .right {
-            background: url(wall.jpg);
-            clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            z-index: 20;
-            transition: 2s;
-        }
-        .open-left {
-            animation-delay: 2s;
-            transform: translateX(-100%);
-        }
-        .open-right {
-            animation-delay: 2s;
-            transform: translateX(100%);
-        }
-        @keyframes open-left {
-            0% {transform: translateX(100%);}
-            100% {transform: translateX(0%);} 
-        }
-        @keyframes open-right {
-            0% {transform: translateX(-100%);}
-            100% {transform: translateX(0%);}
-        }
-        .bg-video {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-        }
-        .grid-container {
-            width: 100vw;
-            height: 100vh;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            justify-content: center;
-            position: absolute;
-            z-index: 10;
-        }
-        .bio {
-            grid-column: 2 / 5;
-            grid-row: 1 / 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            color: white;
-            background: rgba(0,0,0,0.7);
-            border-radius: 2%;
-            margin: 56px;
-            border: 2px solid #7EEEE4;
-            cursor: not-allowed;
-        }
-        .bio h1 {
-            text-align: center;
-            text-shadow: 2px 2px black;
-            font-size: 3em;
-        }
-        .bio p {
-            width: 95%;
-            text-shadow: 2px 2px black;
-        }
-        .meta {
-            grid-column:  1 / 2;
-            grid-row: 1 / 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;            
-            align-items: center;
-            margin: 15%;
-            text-align: center;
-        }
-        #date, #time, #day {
-            //padding-left: 15px;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid #7EEEE4;
-            border-radius: 5px;
-            min-width: 260px;
-            cursor: not-allowed;
-        }
-        .energy {
-            grid-column: 5 / 6;
-            grid-row: 1 / 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            padding: 5%;
-        }
-        .sphere {
-            height: 200px;
-            width: 200px;
-            background: radial-gradient(circle, #20c7dc 60%, #7EEEE4 75%);                      
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: inset -7px 37px 50px -14px black    
-        }
-        .sphere p {
-            width: 100%;
-            text-align: center;
-            font-size: smaller;
-            color: #7EEEE4;
-            text-shadow: 2px 2px gray;
-            transform: skew(5px);
-        }
-        .nav {
-            grid-column: 1 / 6;
-            grid-row: 5 / 7;
-            display: flex;
-            justify-content: space-evenly;
-            //align-items: center;
-        }
-        .bar {
-            width: 10%;
-            height: 80%;            
-            background: linear-gradient(to bottom,
-                rgba(0,255,0,1) 0%,
-                rgba(170,221,42,1) 40%,
-                rgba(229,152,36,1) 88%,
-                rgba(255,0,0,1) 100%);
-            border: 2px solid black;
-        }
-        .nav .sphere:nth-child(1) {
-            animation: heartbeat 1.5s ease-in-out alternate infinite, glow 1.5s ease-in-out alternate infinite;
-        }
-        .nav .sphere:nth-child(2) {            
-            animation: heartbeat 1s ease-in-out alternate infinite, glow 1.5s ease-in-out alternate infinite;        
-        }
-        .nav .sphere:nth-child(3) {
-            animation: heartbeat 1.2s ease-in-out alternate infinite, glow 1.5s ease-in-out alternate infinite;
-            cursor: not-allowed;
-        }
-        @keyframes heartbeat {
-            0% { 
-                transform: translateY(0px);
-            }
-            100% {
-                transform: translateY(8px);
-            }
-        }
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 50px #7EEEE4;
-            }
-            100% {
-                box-shadow: 0 0 75px #7EEEE4;
-            }
-        }
-        .cube-container {
-            width: 100px;
-            height: 100px;
-            perspective: 200px;
-        }
-        .cube {
-            width: 100px;
-            transform-style: preserve-3d;
-            animation: spin 20s linear infinite;
-        }
-        .cube div {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            opacity: .8;
-        }
-        .front {
-            transform: translateZ(50px);
-            background-color: blue;
-        }
-        .back {
-            transform: rotateY(180deg) translateZ(50px);
-            background-color: blue;
-        }
-        .side-left {
-            transform: rotateY(-90deg) translateX(-50px);
-            background-color: blue;
-            transform-origin: left;
-        }
-        .side-right {
-            transform: rotateY(90deg) translateX(50px);
-            background-color: blue;
-            transform-origin: right;
-        }
-        .top {
-            transform: rotateX(-90deg) translateY(-50px);
-            background-color: blue;
-            transform-origin: top;
-        }
-        .bottom {
-            transform: rotateX(90deg) translateY(50px);
-            background-color: blue;
-            transform-origin: bottom;
-        }
-        @keyframes spin {
-            0% {
-                transform: rotateY(360deg);
-            }
-            100% {
-                transform: rotateY(0deg);
-            }
-        }
-        img {
-            width: 100px;
-            height: 100px;
-            cursor: not-allowed;
-        }
-        #trial {
-            width: 100%;
-            height: 235px;
-            max-width: 552px;
-            padding: 0;          
-            position: relative;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid #7EEEE4;
-            border-radius: 15px;
-        }
-
-        svg {
-          width: 100%;
-          height: 100%;
-        }
-
-        #bleed{
-          stroke-dasharray:420;
-          -webkit-animation: dash 1s infinite ease-out ;
-        }
-        @-webkit-keyframes dash{
-          from{
-            stroke-dashoffset:814;
-          }
-          to {
-            stroke-dashoffset:-814;
-          }
-        }
-        .barcode {
-            font-family: 'Libre Barcode 39', cursive;
-            font-size: 2em;
-            text-align: center;
-            line-height: 45px;
-            margin-top: 8%;
-        }
-        .not-allowed {
-            cursor: not-allowed;
-        }
-        .lock {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, red, red, #59000d);
-            width: 150px;
-            height: 150px;
-            z-index: 20;
-            border-radius: 50%;
-            text-align: center;
-            transition: 1.5s;
-        }
-        .lock:hover {
-            transform: translate(-50%, -50%) scale(1.2);
-        }
-        .unlock {
-            cursor: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            z-index: 21;
-            transition: .5s;
-        }
-        .lock:after {
-            content: 'ENTER';
-            position: absolute;
-            top: 50px;
-            left: 11px;
-            z-index: 24;
-            color: white;
-            text-shadow: 2px 2px black;
-        }
-        .unlock:after {
-            content: 'ENTER';
-            position: absolute;
-            top: 50px;
-            left: 11px;
-            z-index: 25;
-            color: black;
-            text-shadow: 1px 1px white;
-        }
-        @keyframes rotate {
-            0%{transform: rotate(0deg);}
-            100%{transform: rotate(360deg);}
-        }
-        .ring1 {
-            position: absolute;
-            top: -25px;
-            left: -25px;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            z-index: 23;
-            border: 15px dashed rgba(225,0,0);
-            animation: rotate 7s infinite linear;
-        }
-        .ring2 {
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            z-index: 22;
-            border: 15px dashed rgba(200,0,0);
-            animation: rotate 9s infinite linear;
-        }
-        .ring3 {
-            position: absolute;
-            top: -75px;
-            left: -75px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            z-index: 21;
-            border: 15px dashed rgba(175,0,0);
-            animation: rotate 15s infinite linear;
-        }
-        .green1 {
-            transition: 1.5s;
-            position: absolute;
-            top: -25px;
-            left: -25px;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            z-index: 23;
-            border: 15px solid green;
-            background: radial-gradient(circle, rgba(0,155,0,0.8), rgba(0,155,0,0.8), black);
-        }
-        .green2 {
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            z-index: 22;
-            border: 15px solid green;
-            transition: 1.5s;
-            background: rgba(0,255,0,0.7);
-        }
-        .green3 {
-            position: absolute;
-            top: -75px;
-            left: -75px;
-            border: 15px solid black;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            z-index: 21;
-            border: 15px solid green;
-            transition: 2s;
-            background: rgba(0,255,0,1);
-        }
-        .hidden {
-            opacity: .0;
-            transition: .5s;
-        }
-        .remove {
-            display: none;
-        }
-        a {
-            text-decoration: none;
-            transition: .5s;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-        }
-        a:hover {
-            transform: scale(1.2);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39|Orbitron|Roboto|VT323" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" />
+    <link href="images/favicon.ico" rel="icon" />
 </head>
 
 <body>
@@ -439,37 +21,28 @@
         </div>
         
         <video class="bg-video" muted autoplay loop>
-            <source src="bg.mp4" type="video/mp4">
+            <source src="images/bg.mp4" type="video/mp4">
         </video>
         <div class="grid-container">
-            <div class="bio">
+            <div class="bio frame">
                 <h1>TEE MAK</h1>
                 <p class="intro">
-                    I'm the letter after 'S' and before 'U'. Don't call me Mak Daddy, that's my dad's name.
+                    I'm the smartest person you know. I have a smart phone. I drink smart water. I drive a smart car.
                 </p>
                 <p class="intro">
-                    My website was made with React and Redux. It is best experienced with a desktop display
-                    but can also be viewed on mobile devices.
+                    This website was built with only HTML, CSS, and JavaScript. No frameworks, no plugins, no libraries. To check out my projects using frameworks click on the portfolio link.
                 </p>
                 <p class="intro">
-                    Click on that contact sphere and leave a message. Let me know how many easter eggs you find.                    
+                    My website is best viewed on a desktop display but also looks great on mobile. All animations and transitions were made with inspiration from Codepen. This is a very interactive website. Click on everything. Use the tesseract if you need help.
                 </p>
             </div>
             <div class="meta">
-                <div id="date"></div>
-                <div id="day"></div>
-                <div id="time"></div>
+                <div id="date" class="frame"></div>
+                <div id="day" class="frame"></div>
+                <div id="time" class="frame"></div>
             </div>
             <div class="nav">
                 
-                <!-- <div id="trial">
-                    <svg class="not-allowed" version="1.2" height="300" width="600" xmlns="http://www.w3.org/2000/svg"
-                        viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path  id="bleed" stroke="rgba(0,155,155,1)" fill="none"stroke-width="5"stroke-linejoin="round"
-                        d="M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,
-                        -10T319,95c6,4 8,-6 10,-17s2,10 9,11h210" />
-                    </svg>
-                </div> -->
 
                 <a href="portfolio.html"><div class="sphere"><p>PORTFOLIO</p></div></a>
                 <a href="social.html"><div class="sphere"><p>SOCIAL</p></div></a>
@@ -482,16 +55,16 @@
                     <p>What is brown and sticky</p>
                 </div>
                 
-                <!-- <div class="cube-container"> 
+                <div class="cube-container"> 
                     <div class="cube">
-                        <div class="front"><img src="cube.jpg"></img></div>
-                        <div class="side-right"><img src="cube.jpg"></img></div>
-                        <div class="side-left"><img src="cube.jpg"></img></div>
-                        <div class="bottom"><img src="cube.jpg"></img></div>
-                        <div class="top"><img src="cube.jpg"></img></div>
-                        <div class="back"><img src="cube.jpg"></img></div>
+                        <div class="front"><img src="images/tess.jpg"></img></div>
+                        <div class="side-right"><img src="images/tess.jpg"></img></div>
+                        <div class="side-left"><img src="images/tess.jpg"></img></div>
+                        <div class="bottom"><img src="images/tess.jpg"></img></div>
+                        <div class="top"><img src="images/tess.jpg"></img></div>
+                        <div class="back"><img src="images/tess.jpg"></img></div>
                     </div>
-                </div> -->
+                </div> 
 
                 <div class="barcode">
                     <p>Escape the matrix for the answer</p>
@@ -503,75 +76,5 @@
         </div>
     </div>
 
+    <script src="js/app.js"></script>
 </body>
-<script>
-    console.log('Contact me by phone at 954.707.9653 or email bunth667@gmail.com.');
-    document.getElementById('lock').addEventListener('click', open);    
-    const lock = document.getElementById('lock');
-    const ring1 = document.getElementById('ring1');
-    const ring2 = document.getElementById('ring2');
-    const ring3 = document.getElementById('ring3');
-    const doorL = document.getElementById('door-left');
-    const doorR = document.getElementById('door-right');
-
-    function open() {
-        lock.classList.remove('lock');
-        lock.classList.add('unlock');
-        ring1.classList.remove('ring1');
-        ring1.classList.add('green1');
-        ring2.classList.remove('ring2');
-        ring2.classList.add('green2');
-        ring3.classList.remove('ring3');
-        ring3.classList.add('green3');
-        setTimeout(slideDoor, 2000);
-        setTimeout(remove, 2500);
-    }   
-
-    function slideDoor() {
-        lock.classList.add('hidden');
-    }
-
-    function remove() {
-        doorL.classList.add('open-left');
-        doorR.classList.add('open-right');
-        lock.classList.add('remove');
-    }
-
-    function checkTime(i) {
-      if (i < 10) {
-        i = "0" + i;
-      }
-      return i;
-    }
-
-    function getDate() {
-      const today = new Date();
-      let h = today.getHours();
-      let m = today.getMinutes();
-      let s = today.getSeconds();
-      const month = today.getMonth();
-      const day = today.getDay();
-      const year = today.getFullYear();
-      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-      'July', 'August', 'September', 'October', 'November', 'December'];
-      let meridiem = 'AM';
-      
-      m = checkTime(m);
-      s = checkTime(s);
-      if(h > 12) {
-        h = h - 12;
-        meridiem = 'PM';
-      }
-      if(h === 0) {
-        h = 12;
-      }
-      document.getElementById('date').innerHTML = `${months[month].toUpperCase()} ${today.getDate()} ${year}`;
-      document.getElementById('day').innerHTML = `${days[day].toUpperCase()}`;
-      document.getElementById('time').innerHTML = `${h}:${m}:${s} ${meridiem}`;
-      t = setTimeout(function() {
-        getDate()
-      }, 500);
-    }
-    getDate();
-</script>

@@ -1,0 +1,155 @@
+:root {
+    --cell: #222222;
+    --line: #494E4A;
+    --border: 6px solid orange;
+    --arrows: #39ff14;
+    --bars: repeating-linear-gradient(60deg, red, black 20px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: gray;
+    color: white;
+}
+
+.background {
+    background:
+        radial-gradient(circle farthest-side at 0% 50%,var(--cell) 23.5%,rgba(240,166,17,0) 0)21px 30px,
+        radial-gradient(circle farthest-side at 0% 50%,var(--line) 24%,rgba(240,166,17,0) 0)19px 30px,
+        linear-gradient(var(--cell) 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,var(--cell) 0)0 0,
+        linear-gradient(150deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,
+        rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
+        linear-gradient(30deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,
+        rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
+        linear-gradient(90deg,var(--line) 2%,var(--cell) 0,var(--cell) 98%,var(--line) 0%)0 0 var(--cell);
+    background-size:40px 60px;
+    transform: translate(-325px, -80px) skewY(-23deg) rotateZ(18deg);
+    height: 150vh;
+    width: 150vw;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index; -10;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.banner-item {
+    height: 10vh;
+    width: 100%;
+    background: gray;
+}
+
+.frame {
+    border: 1px solid #7EEEE4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px cyan inset;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    height: 25vh;
+    width: 25vw;
+    transform: translateY(-8vh);
+}
+
+.card-front, .card-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+.card-front {
+    background: red;
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(90deg) ;
+}
+
+.card-back {
+    background: black;
+    transform-origin: left;
+    transform: translateX(100%) rotateY(90deg) ;
+}
+
+.active {
+    transform: translateX(0) rotateY(0deg) ;
+}
+
+.frontend {
+    background-color: blue;
+}
+.backend {
+    background-color: purple;
+}
+.fullstack {
+    background-color: magenta;
+}
+
+.btn {
+    font-size: 7em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    animation: pulse 1s alternate infinite;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.info {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+
+.description {
+    font-size: 1.5em;
+    padding: 5%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.back-button {
+    font-size: 1.4em;
+    border: 1px solid gray;
+    width: 150px;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background: darkslategray;
+    color: #e67a1a;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: #ffbb00;
+    }
+    100% {
+        transform: scale(1.2);
+        color: #ff6600;
+    }
+}
+
