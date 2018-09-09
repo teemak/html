@@ -3,15 +3,17 @@
     --line: #494E4A;
     --border: 6px solid orange;
     --arrows: #39ff14;
-    --bars: repeating-linear-gradient(60deg, red, black 20px);
+    --bars: repeating-linear-gradient(60deg, red, black 20px);    
+    --orange: #e67a1a;
 }
 
-body {
+body, span {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: gray;
     color: white;
+    font-family: "Orbitron";
+    box-sizing: border-box;
 }
 
 .background {
@@ -38,7 +40,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     height: 100vh;
     position: relative;
 }
@@ -46,24 +47,56 @@ body {
 .banner-item {
     height: 10vh;
     width: 100%;
-    background: gray;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.marquee {
+    display: flex;
+    width: 100%;
+    position: absolute;
+}
+
+.marquee span {
+    animation: marquee 10s linear infinite;
+    font-size: 2em;
+    width: 100%;
+    margin-bottom: 25px;
+    transition: .5s;
+}
+
+.marquee span:hover {
+    animation-play-state: paused;
+    color: black;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(-15%,0);
+    }
+    100% {
+        transform: translate(100%,0);
+    }
 }
 
 .frame {
-    border: 1px solid #7EEEE4;
+    border: 3px solid #7EEEE4;
     border-radius: 5px;
     box-shadow: 0 0 10px cyan inset;
 }
 
 .card-container {
     display: flex;
-    justify-content: space-evenly;
+    margin: 0 auto;
 }
 
 .card {
     height: 25vh;
     width: 25vw;
-    transform: translateY(-8vh);
+    margin: 75px;
+    transform: translateY(0vh);
 }
 
 .card-front, .card-back {
@@ -73,16 +106,16 @@ body {
     top: 0;
     left: 0;
     transition: .5s;
+    font-family: "Roboto";
 }
 
 .card-front {
-    background: red;
     transform-origin: right;
     transform: translateX(-100%) rotateY(90deg) ;
 }
 
 .card-back {
-    background: black;
+    background: #333;
     transform-origin: left;
     transform: translateX(100%) rotateY(90deg) ;
 }
@@ -92,13 +125,13 @@ body {
 }
 
 .frontend {
-    background-color: blue;
+    background: linear-gradient(to right bottom, #2998ff, #5643fa);
 }
 .backend {
-    background-color: purple;
+    background: linear-gradient(to right bottom, #8d35e6, #6115ad);
 }
 .fullstack {
-    background-color: magenta;
+    background: linear-gradient(to right bottom, #ce2ee6, #9910ad);
 }
 
 .btn {
@@ -125,6 +158,7 @@ img {
 .description {
     font-size: 1.5em;
     padding: 5%;
+    color: var(--orange);
 }
 
 .button-container {
@@ -139,7 +173,7 @@ img {
     -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     background: darkslategray;
-    color: #e67a1a;
+    color: var(--orange);
 }
 
 @keyframes pulse {
@@ -148,8 +182,7 @@ img {
         color: #ffbb00;
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(1.1);
         color: #ff6600;
     }
 }
-
