@@ -70,6 +70,7 @@ body, span {
 .marquee span:hover {
     animation-play-state: paused;
     color: black;
+    cursor: pointer;
 }
 
 @keyframes marquee {
