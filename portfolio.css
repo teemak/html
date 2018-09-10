@@ -4,7 +4,7 @@
     --border: 6px solid orange;
     --arrows: #39ff14;
     --bars: repeating-linear-gradient(60deg, red, black 20px);    
-    --orange: #e67a1a;
+    --orange: darkorange;
 }
 
 body, span {
@@ -117,7 +117,7 @@ body, span {
 }
 
 .card-back {
-    background: #333;
+    background: linear-gradient(-32deg, #222, darkslategray, #444);
     transform-origin: left;
     transform: translateX(100%) rotateY(90deg) ;
 }
@@ -134,6 +134,7 @@ body, span {
 }
 .fullstack {
     background: linear-gradient(to right bottom, #ce2ee6, #9910ad);
+    //background: linear-gradient(-45deg, #ce2ee6, #9910ad);
 }
 
 .btn {
@@ -174,12 +175,13 @@ button {
 
 .back-button {
     font-size: 1.4em;
-    border: 1px solid gray;
+    border: 1px solid var(--orange);
     width: 150px;
     -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     background: darkslategray;
     color: var(--orange);
+    padding: 5px;
 }
 
 @keyframes pulse {
