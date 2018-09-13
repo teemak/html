@@ -134,7 +134,6 @@ body, span {
 }
 .fullstack {
     background: linear-gradient(to right bottom, #ce2ee6, #9910ad);
-    //background: linear-gradient(-45deg, #ce2ee6, #9910ad);
 }
 
 .btn {
@@ -169,19 +168,19 @@ button {
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
+    float: left;
+    margin-left: 5%;
 }
 
 .back-button {
-    font-size: 1.4em;
+    font-size: 1.5em;
     border: 1px solid var(--orange);
-    width: 150px;
-    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    background: darkslategray;
+    width: 135px;
+    -webkit-clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    background: black;
     color: var(--orange);
-    padding: 5px;
+    padding: 5px 25px;
 }
 
 @keyframes pulse {
