@@ -405,7 +405,7 @@ body {
     height: 100px;
     z-index: 1;
     transform: scale(0);
-    transition: .5s;
+    transition: .8s;
     background-image: radial-gradient(aliceblue, cyan, cyan, cyan);
     border-radius: 50%;
 }
@@ -438,6 +438,7 @@ body {
     transform-style: preserve-3d;
     animation: spin 15s linear infinite;
 }
+
 .cube div {
     position: absolute;
     width: var(--cube-width);
