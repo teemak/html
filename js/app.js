@@ -1,4 +1,4 @@
-console.log('Contact me by phone 954.707.9653 or email bunth667@gmail.com.');
+console.log('Reach me by phone at 954.707.9653 or via email at bunth667@gmail.com');
 
 document.getElementById('lock').addEventListener('click', open);    
 const lock = document.getElementById('lock');
