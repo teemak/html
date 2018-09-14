@@ -1,5 +1,5 @@
 :root {
-    --cube-size: 2;
+    --cube-size: 1.5;
     --cube-width: calc(var(--cube-size) * 100px);
     --cube-height: calc(var(--cube-size) * 100px);
     --cube-perspective: calc(var(--cube-width) * 2);
