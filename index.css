@@ -21,7 +21,7 @@ body {
 }
 
 /* DOOR */
-.left {
+/*.left {
     background: url(images/wall.jpg);
     clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
     height: 100%;
@@ -63,7 +63,6 @@ body {
     100% {transform: translateX(0%);}
 }
 
-/* LOCK */
 .lock {
     cursor: pointer;
     position: absolute;
@@ -193,8 +192,8 @@ body {
 }
 .remove {
     display: none;
-}
-/* LOCK */
+} */
+
 /* DOOR */
 
 /* MAIN */
@@ -279,6 +278,7 @@ body {
     justify-content: space-around;            
     align-items: center;
     margin: 15%;
+    margin-right: 0;
     text-align: center;
 }
 
@@ -290,11 +290,12 @@ body {
 }
 
 #date, #time, #day {
-    min-width: 300px;
+    width: 300px;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #75efef 50%);
     background-size: 220%;
     transition: .5s;
     cursor: pointer;
+    padding: 10px;
 }
 
 #date:hover, #time:hover, #day:hover {
@@ -309,7 +310,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5%;
+    width: 90%;
 }
 
 .sphere {
@@ -392,10 +393,20 @@ body {
     left: 30px;
     bottom: 20px;
     opacity: .5;
-    box-shadow: 0px 0px 50px 20px cyan;    
     z-index: 20;
     cursor: pointer;
+    animation: space 1s alternate infinite;
 }
+
+@keyframes space {
+    0% {
+        box-shadow: 0px 0px 50px 20px cyan;    
+    }
+    100% {
+        box-shadow: 0px 0px 120px 60px cyan;    
+    }
+}
+
 
 .bg {
     position: absolute;
@@ -408,23 +419,62 @@ body {
     transition: .8s;
     background-image: radial-gradient(aliceblue, cyan, cyan, cyan);
     border-radius: 50%;
+    
 }
 
 .checkbox:checked ~ .bg {
     transform: scale(80);
 }
 
-.nav-links {
+.navigation__nav {
     position: absolute;
-    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    visibility: hidden;
     width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    height: 100vh;
+    opacity: 0;
+    transition: 1s;
 }
 
-.checkbox:checked .nav-links {
-    display: block;
+.checkbox:checked ~ .navigation__nav {
+    visibility:  visible;
+    z-index: 10;
+    opacity: 1;
+}
+
+.navigation__list {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    transform: translate(-43%, -35%);
+}
+
+.navigation__item {
+    list-style: none;
+    width: 75px;
+    height: 100px;
+    border-radius: 50%;
+    cursor:  pointer;
+}
+
+.navigation__item:nth-child(1) {
+    background-image: radial-gradient(aliceblue, orange);
+    border: 1px solid orange;
+}
+.navigation__item:nth-child(2) {
+    background-image: radial-gradient(aliceblue, red);
+    border: 1px solid red;
+}
+.navigation__item:nth-child(3) {
+    background-image: radial-gradient(aliceblue, rebeccapurple);
+    border: 1px solid violet;
+}
+
+.navigation__link {
+    color: black;
 }
 
 .cube-container {
