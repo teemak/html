@@ -247,6 +247,7 @@ body {
     font-size: 3em;
     color: #75efef;
     letter-spacing: 20px;
+    font-family: "Montserrat"
 }
 
 .bio h1:after {
@@ -449,7 +450,7 @@ body {
     width: 100%;
     height: 100%;
     justify-content: space-evenly;
-    transform: translate(-43%, -35%);
+    transform: translate(-46.4%, -35%);
 }
 
 .navigation__item {
@@ -457,24 +458,92 @@ body {
     width: 75px;
     height: 100px;
     border-radius: 50%;
-    cursor:  pointer;
+    cursor: pointer;
 }
 
-.navigation__item:nth-child(1) {
+@keyframes float {
+    0% {
+        box-shadow: 0px 0px 85px 20px orange;    
+    }    
+    100% {
+        box-shadow: 0px 0px 200px 70px orange;    
+    }
+}
+
+#portfolio {
     background-image: radial-gradient(aliceblue, orange);
     border: 1px solid orange;
+    transition: .5s;
+    box-shadow: 0px 0px 85px 20px orange;    
 }
-.navigation__item:nth-child(2) {
+
+#portfolio:after {
+    content: attr(data-text);
+    position: relative;
+    top: 120px;
+    left: -60px;
+    color: orange;
+    transition: .5s;
+}
+
+#portfolio:hover {
+    box-shadow: 0px 0px 200px 150px orange;    
+}
+
+#portfolio:hover:after {
+    color: black;
+}
+
+#social {
     background-image: radial-gradient(aliceblue, red);
     border: 1px solid red;
+    box-shadow: 0px 0px 85px 20px red;    
+    transition: .5s;
 }
-.navigation__item:nth-child(3) {
+
+#social:after {
+    content: attr(data-text);
+    position: relative;
+    top: 120px;
+    left: -30px;
+    color: red;
+}
+
+#social:hover {
+    box-shadow: 0px 0px 200px 150px red;    
+}
+
+#social:hover:after {
+    color: black;
+}
+
+#contact {
     background-image: radial-gradient(aliceblue, rebeccapurple);
-    border: 1px solid violet;
+    border: 1px solid rebeccapurple;
+    box-shadow: 0px 0px 85px 20px rebeccapurple;    
+    transition: .5s;
+}
+
+#contact:after {
+    content: attr(data-text);
+    position: relative;
+    top: 120px;
+    left: -50px;
+    color: rebeccapurple;
+}
+
+#contact:hover {
+    box-shadow: 0px 0px 200px 150px rebeccapurple;    
+}
+
+#contact:hover:after {
+    color: black;
 }
 
 .navigation__link {
     color: black;
+    text-decoration: none;
+    height: 0;
 }
 
 .cube-container {
@@ -526,60 +595,19 @@ body {
         transform: rotateY(0deg);
     }
 }
+
 img {
     width: var(--cube-width);
     height: var(--cube-height);
-    cursor: pointer;
 }
 /* TESSERACT*/
 
 
 
-#trial {
-    width: 100%;
-    height: 235px;
-    max-width: 552px;
-    padding: 0;          
-    position: relative;
-    background: rgba(0,0,0,0.5);
-    border: 1px solid #7EEEE4;
-    border-radius: 15px;
-}
-
-svg {
-  width: 100%;
-  height: 100%;
-}
-
-#bleed{
-  stroke-dasharray:420;
-  -webkit-animation: dash 1s infinite ease-out ;
-}
-@-webkit-keyframes dash{
-  from{
-    stroke-dashoffset:814;
-  }
-  to {
-    stroke-dashoffset:-814;
-  }
-}
 .barcode {
     font-family: 'Libre Barcode 39', cursive;
     font-size: 2em;
     text-align: center;
     line-height: 45px;
     margin-top: 8%;
-}
-.not-allowed {
-    cursor: not-allowed;
-}
-a {
-    text-decoration: none;
-    transition: .5s;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-a:hover {
-    transform: scale(1.2);
 }
