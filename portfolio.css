@@ -12,6 +12,42 @@
     --cube-translate: calc(var(--cube-size) * 50px);
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Orbitron";
+    box-sizing: border-box;
+}
+
+.background {
+    background:
+        radial-gradient(circle farthest-side at 0% 50%,var(--cell) 23.5%,rgba(240,166,17,0) 0)21px 30px,
+        radial-gradient(circle farthest-side at 0% 50%,var(--line) 24%,rgba(240,166,17,0) 0)19px 30px,
+        linear-gradient(var(--cell) 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,var(--cell) 0)0 0,
+        linear-gradient(150deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,
+        rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
+        linear-gradient(30deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,
+        rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
+        linear-gradient(90deg,var(--line) 2%,var(--cell) 0,var(--cell) 98%,var(--line) 0%)0 0 var(--cell);
+    background-size: 40px 60px;
+    transform: translate(-400px, -60px) skewY(-25deg) rotateZ(20deg);
+    height: 115vh;
+    width: 135vw;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index; -10;
+}
+
+.portfolio-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
 .tesseract {
     position: absolute;
     top: 30px;
@@ -19,6 +55,68 @@
     width: var(--cube-width);
     height: var(--cube-height);
     perspective: var(--cube-perspective);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.checkbox {
+    display: none;
+}
+
+.activate {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 210;
+    cursor: pointer;
+}
+
+@keyframes space {
+    0% {
+        box-shadow: 0px 0px 50px 20px cyan;    
+    }
+    100% {
+        box-shadow: 0px 0px 120px 60px cyan;    
+    }
+}
+
+.bg {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 100px;
+    height: 100px;
+    z-index: 200;
+    transform: scale(0);
+    transition: .8s;
+    background-image: radial-gradient(aliceblue, cyan, cyan, cyan);
+    border-radius: 50%;
+}
+
+.checkbox:checked ~ .bg {
+    transform: scale(150);
+}
+
+.checkbox:checked > #cube {
+    display: none;
+}
+
+.navigation__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: 1s;
+}
+
+.checkbox:checked ~ .navigation__nav {
+    visibility:  visible;
+    z-index: 10;
+    opacity: 1;
 }
 
 .cube {
@@ -74,35 +172,6 @@
 img {
     width: var(--cube-width);
     height: var(--cube-height);
-}
-
-body, span {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: white;
-    font-family: "Orbitron";
-    box-sizing: border-box;
-}
-
-.background {
-    background:
-        radial-gradient(circle farthest-side at 0% 50%,var(--cell) 23.5%,rgba(240,166,17,0) 0)21px 30px,
-        radial-gradient(circle farthest-side at 0% 50%,var(--line) 24%,rgba(240,166,17,0) 0)19px 30px,
-        linear-gradient(var(--cell) 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,var(--cell) 0)0 0,
-        linear-gradient(150deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,
-        rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
-        linear-gradient(30deg,var(--cell) 24%,var(--line) 0,var(--line) 26%,rgba(240,166,17,0) 0,
-        rgba(240,166,17,0) 74%,var(--line) 0,var(--line) 76%,var(--cell) 0)0 0,
-        linear-gradient(90deg,var(--line) 2%,var(--cell) 0,var(--cell) 98%,var(--line) 0%)0 0 var(--cell);
-    background-size:40px 60px;
-    transform: translate(-325px, -80px) skewY(-23deg) rotateZ(18deg);
-    height: 150vh;
-    width: 150vw;
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index; -10;
 }
 
 .banner {
