@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <head>
-    <title></title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="portfolio.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39|Orbitron|Roboto" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Tee Mak">
+    <meta name="description" content="Portfolio">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
     <link href="images/favicon.ico" rel="icon" />
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto" rel="stylesheet">
+    <link href="portfolio.css" rel="stylesheet">
+    <title>PORTFOLIO</title>
 </head>
 
 <body>
     <div class="background"></div>
+        <div class="tesseract">
+            <div class="cube">
+                <div class="front"><img src="images/tess.jpg"></img></div>
+                <div class="side-right"><img src="images/tess.jpg"></img></div>
+                <div class="side-left"><img src="images/tess.jpg"></img></div>
+                <div class="bottom"><img src="images/tess.jpg"></img></div>
+                <div class="top"><img src="images/tess.jpg"></img></div>
+                <div class="back"><img src="images/tess.jpg"></img></div>
+            </div>
+        </div>
+
+
     <div class="banner">
         <div class="banner-item frontend">
             <p class="marquee">
@@ -36,25 +52,9 @@
                         <button id="nat-info" class="btn info">&laquo</button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-front active frame">
-                        <img src="images/nextour.png" alt="Real Estate Agency" />
-                        <button class="btn info">&raquo</button>
-                    </div>
-                    <div class="card-back frame">
-                        <p class="description">
-                            Website for a real estate agency. It was made using CSS grid and variables.
-                        </p>
-                        <div class="button-container">
-                            <button class="back-button">DEMO</button>
-                            <button class="back-button">CODE</button>
-                        </div>
-                        <button id="nex-info" class="btn info">&laquo</button>
-                    </div>
-                </div>
+
 
             </div>
-
         </div>
 
         <div class="banner-item backend">
@@ -66,7 +66,23 @@
             <div class="card-container">
                 <div class="card">
                     <div class="card-front active frame">
-                        <img src="images/base.png" alt="Nature Travel Tours" />
+                        <h1>E-Commerce Store</h1>
+                        <button class="btn info">&raquo</button>
+                    </div>
+                    <div class="card-back frame">
+                        <p class="description">
+                            This website was made using SASS and the Block Element Modifier (BEM) methodology.
+                        </p>
+                        <div class="button-container">
+                            <button class="back-button">DEMO</button>
+                            <button class="back-button">CODE</button>
+                        </div>
+                        <button id="nat-info" class="btn info">&laquo</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-front active frame">
+                        <h1>Blog App</h1>
                         <button class="btn info">&raquo</button>
                     </div>
                     <div class="card-back frame">
@@ -140,36 +156,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <script>
-        let natFront = document.getElementsByClassName("card-front")[0];
-        let natBack = document.getElementsByClassName("card-back")[0];
-        let natInfo = document.getElementById("nat-info");
-
-        natFront.addEventListener("click", () => {
-            natBack.classList.add("active");
-            natFront.classList.remove("active");
-        });
-        
-        natInfo.addEventListener("click", () => {
-            natFront.classList.add("active");
-            natBack.classList.remove("active");
-        });
-        
-        let nexFront = document.getElementsByClassName("card-front")[1];
-        let nexBack = document.getElementsByClassName("card-back")[1];
-        let nexInfo = document.getElementById("nex-info");
-
-        nexFront.addEventListener("click", () => {
-            nexBack.classList.add("active");
-            nexFront.classList.remove("active");
-        });
-        
-        nexInfo.addEventListener("click", () => {
-            nexFront.classList.add("active");
-            nexBack.classList.remove("active");
-        });
-    </script>
+    <script src="./js/portfolio.js"></script>
 </body>
 

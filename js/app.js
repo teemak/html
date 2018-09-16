@@ -60,11 +60,13 @@ function getDate() {
   if(h === 0) {
     h = 12;
   }
-  document.getElementById('date').innerHTML = `${months[month].toUpperCase()} ${today.getDate()} ${year}`;
+  //document.getElementById('date').innerHTML = `${months[month].toUpperCase()} ${today.getDate()} ${year}`;
+  document.getElementById('date').innerHTML = `${months[month].toUpperCase()}`;
+  document.getElementById('number').innerHTML = `${today.getDate()}`;
   document.getElementById('day').innerHTML = `${days[day].toUpperCase()}`;
   document.getElementById('time').innerHTML = `${h}:${m}:${s} ${meridiem}`;
   t = setTimeout(function() {
     getDate()
-  }, 500);
+  }, 1000);
 }
 getDate();
