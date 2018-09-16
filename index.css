@@ -377,7 +377,6 @@ body {
 
 .checkbox:checked ~ .bg {
     transform: scale(80);
-    transform: scale(100);
 }
 
 .navigation__nav {
