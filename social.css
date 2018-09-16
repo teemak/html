@@ -1,3 +1,17 @@
+:root {
+    --cell: #222222;
+    --line: #494E4A;
+    --border: 6px solid orange;
+    --arrows: #39ff14;
+    --bars: repeating-linear-gradient(60deg, red, black 20px);    
+    --orange: darkorange;
+    --cube-size: .5;
+    --cube-width: calc(var(--cube-size) * 100px);
+    --cube-height: calc(var(--cube-size) * 100px);
+    --cube-perspective: calc(var(--cube-width) * 2);
+    --cube-translate: calc(var(--cube-size) * 50px);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -103,3 +117,135 @@ body {
 .link:hover {
     transform: translateY(80px) rotate(30deg) scale(1.2);
 }
+.portfolio-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Nav Container */
+.tesseract {
+    position: absolute;
+    top: 40px;
+    right: 55px;
+    width: var(--cube-width);
+    height: var(--cube-height);
+    perspective: var(--cube-perspective);
+    z-index: 100;
+}
+
+.checkbox {
+    display: none;
+}
+
+.stone {
+    height: calc(12px * 4);
+    width: calc(12px * 3);
+    background-image: radial-gradient(aliceblue, cyan);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 300;
+    top: 0px;
+    right: 6px;
+    opacity: .5;
+    z-index: 300;
+    cursor: pointer;
+    animation: space 1s alternate infinite;
+}
+/* Pulse effect for space stone */
+@keyframes space {
+    0% {
+        box-shadow: 0px 0px 50px 20px cyan;    
+    }
+    100% {
+        box-shadow: 0px 0px 120px 60px cyan;    
+    }
+}
+
+.bg {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    z-index: 200;
+    transform: scale(0);
+    transition: .8s;
+    background-image: radial-gradient(aliceblue, cyan, cyan, cyan);
+    border-radius: 50%;
+}
+
+.checkbox:checked ~ .bg {
+    transform: scale(80);
+}
+
+.navigation__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: 1s;
+}
+
+
+.cube {
+    width: var(--cube-width);
+    transform-style: preserve-3d;
+    animation: spin 15s linear infinite;
+}
+
+.cube div {
+    position: absolute;
+    width: var(--cube-width);
+    height: var(--cube-height);
+    opacity: .8;
+}
+
+.front {
+    transform: translateZ(var(--cube-translate));
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(var(--cube-translate));
+}
+
+.side-left {
+    transform: rotateY(-90deg) translateX(calc(var(--cube-translate) * -1));
+    transform-origin: left;
+}
+
+.side-right {
+    transform: rotateY(90deg) translateX(var(--cube-translate));
+    transform-origin: right;
+}
+
+.top {
+    transform: rotateX(-90deg) translateY(calc(var(--cube-translate) * -1));
+    transform-origin: top;
+}
+
+.bottom {
+    transform: rotateX(90deg) translateY(var(--cube-translate));
+    transform-origin: bottom;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(360deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+img {
+    width: var(--cube-width);
+    height: var(--cube-height);
+}
+
