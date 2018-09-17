@@ -61,6 +61,7 @@ body {
     cursor: pointer;
     animation: space 1s alternate infinite;
 }
+
 /* Pulse effect for space stone */
 @keyframes space {
     0% {
@@ -198,7 +199,6 @@ body {
     height: 0;
 }
 
-
 .cube {
     width: var(--cube-width);
     transform-style: preserve-3d;
@@ -263,6 +263,10 @@ img {
     transform: translateY(93px);
 }
 
+.mid-row {
+    
+}
+
 .bot-row {
     transform: translateY(-93px);
 }
@@ -273,7 +277,6 @@ img {
     width: 250px;
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    cursor: pointer;
 
     display: flex;
     justify-content: center;
