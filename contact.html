@@ -1,132 +1,64 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>TEE MAK</title>
-        <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto" rel="stylesheet">
-        <link href="contact.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="portfolio-container">
-            
-            <div class="tesseract">
-                    
-                <input class="checkbox" type="checkbox" id="toggle"></label>
-                <label class="stone" for="toggle"></label>
-                <div class="bg">&nbsp;</div>
-                    
-                <div class="cube">
-                    <div class="front"><img src="images/tess.jpg"></img></div>
-                    <div class="side-right"><img src="images/tess.jpg"></img></div>
-                    <div class="side-left"><img src="images/tess.jpg"></img></div>
-                    <div class="bottom"><img src="images/tess.jpg"></img></div>
-                    <div class="top"><img src="images/tess.jpg"></img></div>
-                    <div class="back"><img src="images/tess.jpg"></img></div>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Tee Mak">
+    <meta name="description" content="Portfolio">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <link href="images/favicon.ico" rel="icon" />
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto" rel="stylesheet">
+    <link href="contact.css" rel="stylesheet">
+    <title>CONTACT</title>
+</head>
+
+<body>
+    <div class="tesseract-container">
+        <div class="tesseract">
+            <input class="checkbox" type="checkbox" id="toggle"></label>
+            <label class="stone" for="toggle"></label>
+            <div class="bg">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <a href="index.html" class="navigation__link">
+                        <li id="index" class="navigation__item" data-text="HOME"></li>
+                    </a>
+                    <a href="portfolio.html" class="navigation__link">
+                        <li id="portfolio" class="navigation__item" data-text="PORTFOLIO"></li>
+                    </a>
+                    <a href="social.html" class="navigation__link">
+                        <li id="social" class="navigation__item" data-text="SOCIAL"></li>
+                    </a>
+                </ul>
+            </nav>
+            <div class="cube">
+                <div class="front"><img src="images/tess.jpg"></img></div>
+                <div class="side-right"><img src="images/tess.jpg"></img></div>
+                <div class="side-left"><img src="images/tess.jpg"></img></div>
+                <div class="bottom"><img src="images/tess.jpg"></img></div>
+                <div class="top"><img src="images/tess.jpg"></img></div>
+                <div class="back"><img src="images/tess.jpg"></img></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="contact" class="contact-container">            
+        <div class="contact">                
+            <form class="form">
+                <h2>CONTACT</h2>
+                <div class="form-group">
+                    <label class="header" for="name"><p>NAME</p></label>
+                    <input id="name" type="text" placeholder="Morpheus"></input>
+                    <label class="header" for="message"><p>MESSAGE</p></label>
+                    <textarea id="message" type="text"  rows="5" placeholder="You take the blue pill the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill you stay in Wonderland, and I show you how deep the rabbit hole goes." required></textarea>
                 </div>
-
-            </div>
-
+                <div class="pills">
+                    <div class="red-pill"><p>SUBMIT</p></div>
+                    <a href="#" onclick="addBlur();"><div class="blue-pill"><p>RETURN</p></div></a>
+                </div>
+            </form>
         </div>
-        <div id="contact" class="contact-container">
-            
-            <div class="contact">                
-                <form class="form">
-                    <h2>CONTACT</h2>
-                    <div class="form-group">
-                        
-                        <label for="name">
-                            <p>NAME</p>
-                        </label>
-                        <input id="name" type="text" placeholder="Morpheus"></input>
-
-                        <label for="message">
-                            <p>MESSAGE</p>
-                        </label>
-                        <textarea id="message" type="text"  rows="5" 
-                            placeholder="You take the blue pill the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill you stay in Wonderland, and I show you how deep the rabbit hole goes." required></textarea>
-
-                    </div>
-                
-                    <div class="pills">
-                        <div class="red-pill"><p>SUBMIT</p></div>
-                        <a href="#" onclick="addBlur();"><div class="blue-pill"><p>RETURN</p></div></a>
-                    </div>
-
-
-                </form>
-            </div>
-            
-            <canvas id="c"></canvas>
-        </div>
-    </body>
-    <script>
-        function addBlur() {
-            let contact = document.getElementById('contact');
-            contact.classList.add('blur');
-            
-            setTimeout(warp, 3000);
-            function warp() {
-                window.location.href = 'index.html';
-            }
-        }
-
-        const c = document.getElementById("c");
-        const ctx = c.getContext("2d");
-        c.height = window.innerHeight/1.5;
-        c.width = window.innerWidth/1.25;
-        const chars = [];
-        
-        for(let j = 0; j < 96; j++) {
-            const kata = String.fromCharCode(0x30A0 + Math.floor(Math.random() * 91));
-            chars.push(kata);
-        }
-
-        const font_size = 20;
-        const columns = c.width / font_size; 
-        const stream = [];
-
-        for(let x = 0; x < columns; x++) {
-            stream[x] = 1; 
-        }    
-
-        function rain() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-            ctx.fillRect(0, 0, c.width, c.height);            
-            ctx.fillStyle = "#3F3"; 
-            ctx.font = font_size + "px arial";
-            
-            for(let i = 24; i < stream.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-
-                ctx.fillText(text, i*font_size, stream[i]*font_size);
-
-                if(stream[i] * font_size > c.height && Math.random() > 0.975) 
-                    stream[i] = 0;
-                    stream[i]++;
-            }
-        }
-        const input1 = document.getElementById('name');
-        const input2 = document.getElementById('message');
-        let once = false;
-
-        function matrixRain() {
-            setInterval(rain, 100);
-        }
-
-        input1.addEventListener('focus', function() {
-            if(!once) {
-                once = true;
-                matrixRain();
-            }
-            return;
-        });
-
-        input2.addEventListener('focus', function() {
-            if(!once) {
-                once = true;
-                matrixRain();
-            }
-            return;
-        });
-
-    </script>
-</html>
+        <canvas id="c"></canvas>
+    </div>
+    <script src="./js/contact.js"></script>
+</body>
