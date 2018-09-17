@@ -1,3 +1,3 @@
 Teemak.website
-My personal website at teemak.website.
+My personal website to showcase my best projects.
 https://teemak.website
