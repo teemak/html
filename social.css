@@ -260,7 +260,7 @@ img {
 }
 
 .top-row {
-    transform: translateY(93px);
+    transform: translateY(93px); 
 }
 
 .mid-row {
@@ -268,7 +268,7 @@ img {
 }
 
 .bot-row {
-    transform: translateY(-93px);
+    transform: translateY(-93px); 
 }
 
 .hex-item {

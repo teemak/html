@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "teemakwebsite",
+    "dev": "teemakwebsite"
+  }
+}
