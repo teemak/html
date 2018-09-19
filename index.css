@@ -143,22 +143,20 @@ a:nth-child(3) > .nav-item {
 }
 
 /* DESKTOP */
-@media all and (min-width: 1280px) {
+@media all and (min-width: 1300px) {
     body {
         overflow: hidden;
+        font-size: 1.5em;
     }
     .nav-container {
         display: none;
     }
-
     .left, .right, .lock, .ring, .meta, .cube, .barcode-container, .cube-container {
         display: block;
     }
 
     .bg-video {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
+        z-index: 1;
     }
 
     /* DOOR */
@@ -169,7 +167,7 @@ a:nth-child(3) > .nav-item {
         width: 100%;
         position: absolute;
         top: 0;
-        z-index: 20;
+        z-index: 11;
         transition: 2s;
     }
 
@@ -180,7 +178,7 @@ a:nth-child(3) > .nav-item {
         width: 100%;
         position: absolute;
         top: 0;
-        z-index: 20;
+        z-index: 11;
         transition: 2s;
     }
 
@@ -213,7 +211,7 @@ a:nth-child(3) > .nav-item {
         background: radial-gradient(circle, red, red, #59000d);
         width: 150px;
         height: 150px;
-        z-index: 20;
+        z-index: 12;
         border-radius: 50%;
         text-align: center;
         transition: 1.5s;
@@ -226,16 +224,13 @@ a:nth-child(3) > .nav-item {
     
     .lock:after {
         content: attr(data-text);
-        position: absolute;
-        top: 50px;
-        left: 11px;
-        z-index: 24;
-        color: white;
+        position: relative;
+        top: 37%;
+        left: 0;
         text-shadow: 2px 2px black;
     }
 
     .unlock {
-        cursor: none;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -245,15 +240,15 @@ a:nth-child(3) > .nav-item {
         border-radius: 50%;
         z-index: 21;
         transition: .5s;
+        opacity: 1;
     }
-
 
     .unlock:after {
         content: 'HELLO';
         position: absolute;
-        top: 50px;
-        left: 11px;
-        z-index: 25;
+        top: 38%;
+        left: 18%;
+        z-index: 23;
         color: black;
         text-shadow: 1px 1px white;
     }
@@ -340,7 +335,7 @@ a:nth-child(3) > .nav-item {
     }
 
     .hidden {
-        opacity: .0;
+        opacity: 0;
         transition: .5s;
     }
 
@@ -358,7 +353,7 @@ a:nth-child(3) > .nav-item {
 
     .intro {
         font-family: 'Roboto', sans-serif;
-        font-size: smaller;
+        margin: 1%;
     }
 
     .main-container {
@@ -391,7 +386,6 @@ a:nth-child(3) > .nav-item {
         border-radius: 2%;
         margin: 56px;
         border: 2px solid #7EEEE4;
-        cursor: not-allowed;
     }
 
     .bio h1 {
@@ -432,19 +426,12 @@ a:nth-child(3) > .nav-item {
         justify-content: space-around;            
         align-items: center;
         margin: 15%;
-        margin-right: 0;
         text-align: center;
+        height: 100%;
     }
 
-    /*.frame {
-        background: rgba(0,0,0,0.5);
-        border: 1px solid #7EEEE4;
-        border-radius: 5px;
-        box-shadow: 0 0 10px cyan inset;
-    } */
-
     #date, #time, #day, #number, #year {
-        width: 300px;
+        width: 240px;
         background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #75efef 50%);
         background-size: 220%;
         transition: .5s;
@@ -458,6 +445,7 @@ a:nth-child(3) > .nav-item {
     }
 
     .barcode-container {
+        color: cyan;
         grid-column: 5 / 6;
         grid-row: 1 / 5;
         display: flex;
@@ -465,6 +453,7 @@ a:nth-child(3) > .nav-item {
         justify-content: space-evenly;
         align-items: center;
         width: 90%;
+        font-size: 1.5em;
     }
 
     .nav {
@@ -473,7 +462,6 @@ a:nth-child(3) > .nav-item {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 75px;
     }
 
     /* TESSERACT */
@@ -487,11 +475,11 @@ a:nth-child(3) > .nav-item {
         background-image: radial-gradient(aliceblue, cyan);
         border-radius: 50%;
         position: absolute;
-        z-index: 1;
+        z-index: 100;
         left: 30px;
         bottom: 20px;
         opacity: .5;
-        z-index: 20;
+        z-index: 21;
         cursor: pointer;
         animation: space 1s alternate infinite;
     }
@@ -545,7 +533,9 @@ a:nth-child(3) > .nav-item {
         width: 100%;
         height: 100%;
         justify-content: space-evenly;
-        transform: translate(-46.4%, -35%);
+        position: relative;
+        top: -35%;
+        left: -46.4%;
     }
 
     .navigation__item {
@@ -567,7 +557,7 @@ a:nth-child(3) > .nav-item {
         content: attr(data-text);
         position: relative;
         top: 120px;
-        left: -60px;
+        left: -45px;
         color: darkorange;
         transition: .5s;
     }
@@ -591,7 +581,7 @@ a:nth-child(3) > .nav-item {
         content: attr(data-text);
         position: relative;
         top: 120px;
-        left: -30px;
+        left: -15px;
         color: red;
     }
 
@@ -614,7 +604,7 @@ a:nth-child(3) > .nav-item {
         content: attr(data-text);
         position: relative;
         top: 120px;
-        left: -50px;
+        left: -30px;
         color: rebeccapurple;
     }
 
@@ -692,7 +682,6 @@ a:nth-child(3) > .nav-item {
         width: var(--cube-width);
         height: var(--cube-height);
     }
-    /* TESSERACT*/
 
     .barcode {
         font-family: 'Libre Barcode 39', cursive;
