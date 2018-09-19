@@ -244,7 +244,7 @@ a:nth-child(3) > .nav-item {
     }
 
     .unlock:after {
-        content: 'HELLO';
+        content: 'ENTER';
         position: absolute;
         top: 38%;
         left: 18%;
@@ -428,6 +428,7 @@ a:nth-child(3) > .nav-item {
         margin: 15%;
         text-align: center;
         height: 100%;
+        color: cyan;
     }
 
     #date, #time, #day, #number, #year {
