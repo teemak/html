@@ -40,6 +40,99 @@ body {
     z-index; -10;
 }
 
+/* TAKES 100% of Height */
+.project-container {
+    z-index: 1;
+    padding-top: 5%;
+        
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Card-container */
+.card {
+    width: 90%;
+    height: 25%;
+    margin: 0 auto;
+    border: 1px solid green;
+    background: blue;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    font-size: 5em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    animation: pulse 1s alternate infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: #ffbb00;
+    }
+    100% {
+        transform: scale(1.1);
+        color: #ff6600;
+    }
+}
+
+.info {
+    position: relative;
+    left: 80%;
+    bottom: 55%;
+    z-index: 10;
+}
+
+.card-front {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: .5s;
+    font-family: "Roboto";
+}
+
+.card-front {
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(90deg) ;
+}
+
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25%;
+    width: 90%;
+    transition: .5s;
+    margin: 5%;
+    background: linear-gradient(-32deg, #222, darkslategray, #444);
+    transform-origin: left;
+    transform: translateX(100%) rotateY(90deg) ;
+    color: darkorange;
+    font-size: 1.1rem;
+}
+
+.description {
+    padding: 5px;
+}
+
+.active {
+    transform: translateX(0) rotateY(0deg) ;
+}
+
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -88,9 +181,6 @@ a:nth-child(3) > .nav-item {
     display: none;
 }
 
-.card {
-    display: block;
-}
 
 @media all and (min-width: 736px) {
     .portfolio-container {
@@ -486,14 +576,4 @@ a:nth-child(3) > .nav-item {
        color: black;
     }
 
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            color: #ffbb00;
-        }
-        100% {
-            transform: scale(1.1);
-            color: #ff6600;
-        }
-    }
 }
