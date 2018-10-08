@@ -15,7 +15,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    #overflow: hidden;
     font-family: "Orbitron";
     box-sizing: border-box;
 }
@@ -32,12 +32,12 @@ body {
         linear-gradient(90deg,var(--line) 2%,var(--cell) 0,var(--cell) 98%,var(--line) 0%)0 0 var(--cell);
     background-size: 40px 60px;
     /* transform: translate(-400px, -60px) skewY(-25deg) rotateZ(20deg); */
-    height: 100vh;
+    height: 185vh;
     width: 100vw;
     position: absolute;
     top:0;
     left: 0;
-    z-index; -10;
+    z-index: -1;
 }
 
 /* TAKES 100% of Height */
@@ -51,6 +51,7 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
 
 /* Card-container */
 .card {
@@ -132,13 +133,46 @@ img {
     transform: translateX(0) rotateY(0deg) ;
 }
 
+/* MOBILE */
+.project-container__mobile {
+    height: 100%;
+}
+.proj__mobile {
+    margin: 15px;    
+
+}
+
+.proj__mobile:last-child {
+    margin-bottom: 115px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    border: 1px solid cyan;
+    background: rgba(0,0,0,1);
+    box-shadow: 0 0 10px cyan inset;
+    box-shadow-top: 0 0 0 0;
+}
+
+.nav-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 15%;
+    width: 100%;
+    background: rgba(0,0,0,1);
+    border-top: 1px solid cyan;
+    box-shadow: 0 0 10px cyan inset;
+}
 
 .nav-list {
+    padding: 0;
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
 }
 
 /* STONES */
