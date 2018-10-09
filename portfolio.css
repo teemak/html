@@ -32,7 +32,7 @@ body {
         linear-gradient(90deg,var(--line) 2%,var(--cell) 0,var(--cell) 98%,var(--line) 0%)0 0 var(--cell);
     background-size: 40px 60px;
     /* transform: translate(-400px, -60px) skewY(-25deg) rotateZ(20deg); */
-    height: 185vh;
+    height: 190vh;
     width: 100vw;
     position: absolute;
     top:0;
@@ -42,16 +42,16 @@ body {
 
 /* TAKES 100% of Height */
 .project-container {
-    z-index: 1;
+    /* z-index: 1;
     padding-top: 5%;
         
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100vw; */
+	display: hidden;
 }
-
 
 /* Card-container */
 .card {
@@ -196,8 +196,9 @@ a {
 }
 
 a:nth-child(1) > .nav-item {
-    background-image: radial-gradient(aliceblue, darkorange);
-    box-shadow: 0 0 30px 10px darkorange;
+	color: white;
+    background-image: radial-gradient(aliceblue, green);
+	animation: space 1s alternate infinite;
 }
 
 a:nth-child(2) > .nav-item {
@@ -210,6 +211,14 @@ a:nth-child(3) > .nav-item {
     box-shadow: 0 0 30px 10px purple;
 }
 
+@keyframes space {
+	0% {
+		box-shadow: 0px 0px 25px 5px green;    
+	}
+	100% {
+		box-shadow: 0 0 30px 10px green;
+	}
+}
 
 .tesseract, .banner {
     display: none;
@@ -217,6 +226,13 @@ a:nth-child(3) > .nav-item {
 
 
 @media all and (min-width: 736px) {
+	.background {
+		height: 100vh;
+		overflow: hidden;
+	}
+	.project-container__mobile, .nav-container {
+		display: none;
+	}
     .portfolio-container {
         position: absolute;
         top: 0;
@@ -510,6 +526,9 @@ a:nth-child(3) > .nav-item {
         width: 25vw;
         margin: 75px;
         transform: translateY(0vh);
+		border: none;
+		background: none;
+		overflow: inherit;
     }
 
     .card-front, .card-back {
@@ -564,8 +583,8 @@ a:nth-child(3) > .nav-item {
 
     .info {
         position: absolute;
-        top: 50%;
-        right: 10px;
+        top: 30%;
+        left: 70%;
     }
 
     .description {
