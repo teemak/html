@@ -226,6 +226,9 @@ a:nth-child(3) > .nav-item {
 
 
 @media all and (min-width: 736px) {
+    body {
+        overflow: hidden;
+    }
 	.background {
 		height: 100vh;
 		overflow: hidden;
@@ -243,6 +246,7 @@ a:nth-child(3) > .nav-item {
 
     /* Nav Container */
     .tesseract {
+        display: block;
         position: absolute;
         top: 40px;
         right: 55px;
@@ -534,7 +538,7 @@ a:nth-child(3) > .nav-item {
     .card-front, .card-back {
         height: 100%;
         width: 100%;
-        position: absolute;
+        /* position: absolute; */
         top: 0;
         left: 0;
         transition: .5s;
@@ -543,17 +547,18 @@ a:nth-child(3) > .nav-item {
 
     .card-front {
         transform-origin: right;
-        transform: translateX(-100%) rotateY(90deg) ;
+        /* transform: translateX(-100%) rotateY(90deg); */
     }
 
     .card-back {
         background: linear-gradient(-32deg, #222, darkslategray, #444);
         transform-origin: left;
-        transform: translateX(100%) rotateY(90deg) ;
+        margin: 0;
+        /* transform: translateX(100%) rotateY(90deg); */
     }
 
     .active {
-        transform: translateX(0) rotateY(0deg) ;
+        /* transform: translateX(0) rotateY(0deg) ; */
     }
 
     .frontend {
@@ -584,12 +589,11 @@ a:nth-child(3) > .nav-item {
     .info {
         position: absolute;
         top: 30%;
-        left: 70%;
+        left: 80%;
     }
 
     .description {
-        font-size: 1.5em;
-        padding: 5%;
+        margin: 5%;
         color: var(--orange);
     }
 
@@ -600,6 +604,9 @@ a:nth-child(3) > .nav-item {
     .button-container {
         float: left;
         margin-left: 5%;
+        background: none;
+        border: none;
+        box-shadow: none;
     }
 
     a {
