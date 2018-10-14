@@ -264,16 +264,16 @@ img {
 
 .top-row {
     /* transform: translateY(93px); */
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 .mid-row {
-    margin-top: -5%;    
+    margin-top: -77px;    
 }
 
 .bot-row {
     /* transform: translateY(-93px); */
-    margin-top: -5%;
+    margin-top: -77px;
 }
 
 .hex-item {
