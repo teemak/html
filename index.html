@@ -8,12 +8,26 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <link href="images/favicon.ico" rel="icon" />
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39|Orbitron|Roboto|VT323|Montserrat" rel="stylesheet">
-    <link href="index.css" rel="stylesheet" />
+	<link href="styles.css" rel="stylesheet" />
     <title>TEE MAK</title>
 </head>
 <body>
-<!--
+	<h1>Vinix Chat</h1>
+	<div id="vinix-chat">
+		<div id="chat-window">
+			<div id="output"></div>
+			<div id="feedback"></div>
+		</div>
+		<input id="handle" type="text" placeholder="Name" />
+		<input id="message" type="text" placeholder="Message" />
+		<button id="send">Send</button>
+	</div>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js">
+	</script>
+	<script src="/chat.js"></script>
+</body>
+<!--
     <div class="main-container">
         <div id="door-left" class="left"></div>
         <div id="door-right" class="right"></div>
@@ -39,7 +53,7 @@
 
             <div class="bio frame">
                 <h1>TEE MAK</h1>
-                <!-- <p class="intro">
+                <p class="intro">
                     I'm the smartest person you'll ever meet. I use a smart phone. I drink smart water. I drive a smart car... I don't really have a smart car.
                 </p>
                 <p class="intro">
@@ -118,7 +132,6 @@
 			s1.setAttribute('crossorigin','*');
 			s0.parentNode.insertBefore(s1,s0);
 		})();
-	</script>
-	-->
+	</script> -->
 </body>
 
