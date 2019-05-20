@@ -1,5 +1,5 @@
 //CLIENT SIDE
-const socket = io.connect("https://teematrix.vinixtech.net");
+const socket = io.connect("https://teematrix.vinixtech.net:7777");
 console.log("CLIENT SOCKET\n", socket);
 //const socket = io.connect("http://localhost:5000");
 
