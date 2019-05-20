@@ -1,6 +1,6 @@
 //CLIENT SIDE
-console.log("CHAT.js connected");
 const socket = io.connect("https://teemak.site");
+console.log("CLIENT SOCKET\n", socket);
 //const socket = io.connect("http://localhost:5000");
 
 const message = document.getElementById("message");
