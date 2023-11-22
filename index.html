@@ -6,131 +6,45 @@
     <meta name="author" content="Tee Mak">
     <meta name="description" content="Portfolio">
     <meta name="keywords" content="HTML, CSS, JavaScript">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
     <link href="images/favicon.ico" rel="icon" />
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39|Orbitron|Roboto|VT323|Montserrat" rel="stylesheet">
     <link href="styles.css" rel="stylesheet" />
     <title>TEE MAK</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NJLJ5SCX');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
-	<h1>Vinix Chat</h1>
-	<div id="vinix-chat">
-		<div id="chat-window">
-			<div id="output"></div>
-			<div id="feedback"></div>
-		</div>
-		<input id="handle" type="text" placeholder="Name" />
-		<input id="message" type="text" placeholder="Message" />
-		<button id="send">Send</button>
-	</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJLJ5SCX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DR1ZVM8R53"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-	<script src="chat.js"></script>
-</body>
-<!--
-    <div class="main-container">
-        <div id="door-left" class="left"></div>
-        <div id="door-right" class="right"></div>
-        
-        <div id="lock" class="lock" data-text="ENTER">
-            <div id="ring1" class="ring1"></div>
-            <div id="ring2" class="ring2"></div>
-            <div id="ring3" class="ring3"></div>
-        </div>
-        
-        <video class="bg-video" muted autoplay loop>
-            <source src="images/bg.mp4" type="video/mp4">
-        </video>
+  gtag('config', 'G-DR1ZVM8R53');
+</script>
+<!-- End Google tag (gtag.js) -->
 
-        <div class="grid-container">
-            <div class="meta">
-                <div id="date" class="frame"></div>
-                <div id="number" class="frame"></div>
-                <div id="year" class="frame">2018</div>
-                <div id="day" class="frame"></div>
-                <div id="time" class="frame"></div>
-            </div>
+<h1>Elegant Contact Form</h1>
+<form class="cf">
+  <div class="half left cf">
+    <input type="text" id="input-name" placeholder="Name">
+    <input type="email" id="input-email" placeholder="Email address">
+    <input type="text" id="input-subject" placeholder="Subject">
+  </div>
+  <div class="half right cf">
+    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+  </div>  
+  <input type="submit" value="Submit" id="input-submit">
+</form>
 
-            <div class="bio frame">
-                <h1>TEE MAK</h1>
-                <p class="intro">
-                    I'm the smartest person you'll ever meet. I use a smart phone. I drink smart water. I drive a smart car... I don't really have a smart car.
-                </p>
-                <p class="intro">
-                    The website was created with HTML, CSS, and JavaScript. No frameworks, no libraries. Check out my other projects by using the infinity stones.
-                </p>
-                <p class="intro">
-                    The website is best viewed on desktop but also looks great on mobile. The design was inspired from my favorite video games, movies, and shows.
-				</p>
-            </div>
-            
-            <div class="barcode-container">
-                <div class="barcode">
-                    <p>What is brown and sticky</p>
-                </div>
-
-                <div class="barcode">
-                    <p>Escape the matrix for the answer</p>
-                </div>
-            </div>
-
-            
-            <div class="nav-container">
-                <ul class="nav-list">
-                    <a href="portfolio.html"><li class="nav-item"><span>PORTFOLIO</span></li></a>
-                    <a href="social.html"><li class="nav-item"><span>SOCIAL</span></li></a>
-                    <a href="contact.html"><li class="nav-item"><span>CONTACT</span></li></a>
-                </ul>
-            </div>
-
-            <div class="nav">
-                <div class="cube-container">                     
-                    <input class="checkbox" type="checkbox" id="toggle" autocomplete="off"></label>
-                    <label class="stone" for="toggle"></label>
-                    <div class="bg">&nbsp;</div>
-
-                    <nav class="navigation__nav">
-                        <ul class="navigation__list">
-                            <a href="portfolio.html" class="navigation__link">
-                                <li id="portfolio" class="navigation__item" data-text="PORTFOLIO"></li>
-                            </a>
-                            <a href="social.html" class="navigation__link">
-                                <li id="social" class="navigation__item" data-text="SOCIAL"></li>
-                            </a>
-                            <a href="contact.html" class="navigation__link">
-                                <li id="contact" class="navigation__item" data-text="CONTACT"></li>
-                            </a>
-                        </ul>
-                    </nav>
-                    
-                    <div class="cube">
-                        <div class="front"><img src="images/tess.jpg"></img></div>
-                        <div class="side-right"><img src="images/tess.jpg"></img></div>
-                        <div class="side-left"><img src="images/tess.jpg"></img></div>
-                        <div class="bottom"><img src="images/tess.jpg"></img></div>
-                        <div class="top"><img src="images/tess.jpg"></img></div>
-                        <div class="back"><img src="images/tess.jpg"></img></div>
-                    </div>
-                </div>
-
-            </div>
-            
-
-        </div>
-    </div>
-
-    <script src="js/app.js"></script>
-
-
-	<script type="text/javascript">
-		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-		(function(){
-			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-			s1.async=true;
-			s1.src='https://embed.tawk.to/5cb7274fd6e05b735b430f56/default';
-			s1.charset='UTF-8';
-			s1.setAttribute('crossorigin','*');
-			s0.parentNode.insertBefore(s1,s0);
-		})();
-	</script> -->
 </body>
 
